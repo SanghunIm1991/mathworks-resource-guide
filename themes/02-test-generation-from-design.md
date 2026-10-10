@@ -18,12 +18,30 @@
 
 テスト生成の前に、Requirements Tableの要件が完全で矛盾がないかを解析しておくことが推奨されている（不完全だとテスト目標を満たすテストを作れないことがある）。
 
+### 設計パターンごとのテスト生成
+
+真理値表・状態遷移表などの設計パターンに専用のテスト生成の機能があるわけではない。Simulink Design Verifierのカバレッジを満たすテスト生成を、そのパターンを含むモデルに対して実行する。パターンごとに対象になるカバレッジ（判定・条件・MCDC・関係演算子の境界等）が違うので、目標のカバレッジを選ぶ前に「カバレッジの対象となるモデル オブジェクト」の表で確かめる。
+
+| 設計パターン | テスト生成の方法 | モデルをスクリプトで作る・読む |
+|---|---|---|
+| 真理値表（Truth Tableブロック、チャートの中の真理値表関数） | カバレッジを満たすテスト生成 | `Stateflow.TruthTableChart`・`Stateflow.TruthTable`の`ConditionTable`・`ActionTable` |
+| 状態遷移表（State Transition Tableブロック） | カバレッジを満たすテスト生成 | `Stateflow.StateTransitionTableChart`（行・列を追加する関数はR2026b以降） |
+| Stateflowチャート | カバレッジを満たすテスト生成 | Stateflow API（`sfnew`・`Stateflow.State`・`Stateflow.Transition`等） |
+| Requirements Table | 要件ベースのテスト生成 | `slreq.modeling.create`・`addRequirementRow`等（R2022a以降） |
+
+スクリプトでの操作は、どのパターンでも同じ流れになる。
+
+1. `sldvoptions`でオプションを作り、`Mode`を`TestGeneration`に、`ModelCoverageObjectives`を目標のカバレッジ（`MCDC`等）にする
+2. `sldvrun`でテストを生成する（生成したテストはデータファイルに保存される）
+3. `sldvruntest`でテストを実行してカバレッジを確かめるか、`sltest.import.sldvData`でSimulink TestのTest Managerへ取り込む
+
 ## 読む順番の目安
 
 1. 「Workflow for Test Generation」で、Simulink Design Verifierによるテスト生成の全体の流れをつかむ
 2. 要件から作るなら「Requirements Table ブロックを使用した仕様モデルの作成」→「Requirements Table ブロックからのテストの生成とエクスポート」→例題「要件に基づくテストに対する仕様モデルの使用」
 3. カバレッジの穴を埋めるなら「テスト生成用のモデル カバレッジ オブジェクティブ」と「既存テスト ケースの定義および拡張」
 4. Test Managerでの管理は「SimulinkTest へのテスト ケースのエクスポート」と`sltest.import.sldvData`
+5. 真理値表・状態遷移表等で生成するなら、「カバレッジの対象となるモデル オブジェクト」で目標のカバレッジを決める。スクリプトで操作するなら、例題「Stateflow チャートでのカスタム コードのテスト生成」で`sldvoptions`→`sldvrun`→`sldvruntest`の流れをつかみ、「Design Verifier ペイン: テスト生成」でオプションの名前を引く
 
 ## リンク
 
@@ -55,6 +73,38 @@
 | [Generate Tests and Test Harnesses for a Model or Components](https://jp.mathworks.com/help/sltest/ug/generate-tests-and-test-harnesses-for-a-model-or-components.html) | チュートリアル | モデルやコンポーネントごとに、テストハーネスとテストケースをウィザードで作る（英語） | Simulink Test |
 | [sltest.testmanager.createTestForComponent](https://jp.mathworks.com/help/sltest/ref/sltest.testmanager.createtestforcomponent.html) | 辞書 | 上のウィザードと同じことをスクリプトで行う。複数のコンポーネントにまとめて作れる（英語） | Simulink Test、R2020b以降 |
 | [sltest.import.sldvData](https://jp.mathworks.com/help/sltest/ref/sltest.import.sldvdata.html) | 辞書 | Simulink Design Verifierの解析結果から、テストハーネスとテストファイルを作る | Simulink Test、Simulink Design Verifier、R2015b以降 |
+
+### ドキュメント（設計パターンとカバレッジ）
+
+| リンク | 用途 | 説明 | 製品・リリース |
+|---|---|---|---|
+| [カバレッジの対象となるモデル オブジェクト](https://jp.mathworks.com/help/slcoverage/ug/model-objects-that-receive-coverage.html) | 辞書 | ブロックごとに、どの種類のカバレッジ（判定・条件・MCDC・関係演算子の境界等）の対象になるかの表。Truth Table・State Transition Table・Requirements Table・Stateflowチャートの行もある | Simulink Coverage |
+| [Stateflow 真理値表のモデル カバレッジ](https://jp.mathworks.com/help/slcoverage/ug/coverage-for-truth-tables.html) | 辞書 | 真理値表のカバレッジ。クラシックの真理値表とMATLABの真理値表で、対象になるものが違う | Simulink Coverage、Stateflow |
+| [Stateflow チャートのモデル カバレッジ](https://jp.mathworks.com/help/slcoverage/ug/coverage-for-stateflow-charts.html) | 辞書 | チャートのステート・遷移のカバレッジ。状態遷移表の節もあり、同じ内容のチャートと同じ結果になることや、`after`等の時相論理の扱いがアクション言語で違うことを説明している | Simulink Coverage、Stateflow |
+| [拡張 MCDC 解析用のモデルの解析](https://jp.mathworks.com/help/sldv/ug/analyze-a-model-for-enhanced-mcdc-analysis.html) | サンプル | 例題。条件の組み合わせをより厳しく確かめる「拡張MCDC」を目標にテストを生成する（操作はUIが中心） | Simulink Design Verifier |
+
+### ドキュメント（スクリプトでのテスト生成）
+
+| リンク | 用途 | 説明 | 製品・リリース |
+|---|---|---|---|
+| [Stateflow チャートでのカスタム コードのテスト生成](https://jp.mathworks.com/help/sldv/ug/test-generation-for-custom-code-in-stateflow-chart.html) | サンプル | 例題。Stateflowチャートのモデルに対し、`sldvoptions`→`sldvrun`でテストを生成し、`sldvruntest`でカバレッジを確かめるまでをスクリプトで行う | Simulink Design Verifier、Stateflow |
+| [sldvoptions](https://jp.mathworks.com/help/sldv/ref/sldvoptions.html) | 辞書 | 解析のオプションのオブジェクトを作る。`Mode`・`ModelCoverageObjectives`・`TestSuiteOptimization`等の一覧。`set_param`で設定するときの名前（`DV`を前に付ける）もここ | Simulink Design Verifier、R2007a以降 |
+| [Design Verifier ペイン: テスト生成](https://jp.mathworks.com/help/sldv/ug/design-verifier-pane-test-generation.html) | 辞書 | テスト生成のパラメーターの一覧。各パラメーターの「コマンド ライン情報」に`set_param`で使う名前（`DVModelCoverageObjectives`等）がある | Simulink Design Verifier |
+| [sldvrun](https://jp.mathworks.com/help/sldv/ref/sldvrun.html) | 辞書 | 解析を実行する。生成したデータファイル・ハーネスモデル・レポートのファイル名を返す | Simulink Design Verifier、R2007a以降 |
+| [sldvruntest](https://jp.mathworks.com/help/sldv/ref/sldvruntest.html) | 辞書 | 生成したテストケースごとにモデルをシミュレーションする。`sldvruntestopts`でカバレッジの収集も指定できる | Simulink Design Verifier、R2007b以降 |
+| [sldvcompat](https://jp.mathworks.com/help/sldv/ref/sldvcompat.html) | 辞書 | モデルが解析に対応しているかを、解析の前に確かめる | Simulink Design Verifier、R2007a以降 |
+
+### ドキュメント（設計パターンのモデルをスクリプトで作る）
+
+| リンク | 用途 | 説明 | 製品・リリース |
+|---|---|---|---|
+| [Stateflow プログラム インターフェイス](https://jp.mathworks.com/help/stateflow/programmatic-interface.html) | 辞書 | カテゴリのページ。Stateflow APIの関数・オブジェクト・解説の一覧 | Stateflow |
+| [Stateflow API を使用したチャートの作成](https://jp.mathworks.com/help/stateflow/api/quick-start-for-the-stateflow-api.html) | チュートリアル | 例題。ステート・遷移・データをコマンドで追加してチャートを作り、シミュレーションするまで | Stateflow |
+| [Stateflow.TruthTableChart](https://jp.mathworks.com/help/stateflow/api/stateflow.truthtablechart.html) | 辞書 | Truth Tableブロックのオブジェクト。条件の表（`ConditionTable`）とアクションの表（`ActionTable`）をセル配列で読み書きできる | Stateflow |
+| [Stateflow.TruthTable](https://jp.mathworks.com/help/stateflow/api/stateflow.truthtable.html) | 辞書 | チャートの中の真理値表関数のオブジェクト。`ConditionTable`・`ActionTable`は上と同じ | Stateflow |
+| [Stateflow.StateTransitionTableChart](https://jp.mathworks.com/help/stateflow/api/stateflow.statetransitiontablechart.html) | 辞書 | State Transition Tableブロックのオブジェクト。内容を構造体で書き出す`exportAsStruct`（R2022b以降）。行・列を追加する関数（`addStateRow`・`addTransitionColumn`等）はR2026b以降で、調査時点では英語版のページにだけ載っている | Stateflow、R2012b以降 |
+| [状態遷移表](https://jp.mathworks.com/help/stateflow/state-transition-tables.html) | 辞書 | カテゴリのページ。状態遷移表とチャートを相互に変換する`convertToChart`・`convertToSTT`（R2023b以降）もここ | Stateflow |
+| [プログラムによる Requirements Table ブロックの作成](https://jp.mathworks.com/help/slrequirements/ug/configure-requirements-table-blocks-programmatically.html) | チュートリアル | `slreq.modeling.create`でブロックを作り、シンボル・要件の行・前提の行をスクリプトで追加する | Requirements Toolbox、R2022a以降 |
 
 ### 製品・ソリューションのページ
 
@@ -90,3 +140,6 @@
 - 検索で見つかった次の英語のページは、調査時点で`www.`・`jp.`ともに404だった（ページの移動・統合の可能性がある）ため載せていない: Simulink Testの「Increase Coverage by Generating Test Inputs」、「Automatically Create a Set of Test Cases」。
 - 日本語の動画: 「MATLAB Japan」チャンネルで、テストの自動生成を主題にした動画は見つからなかった。
 - 新しい年の講演資料（MATLAB EXPO 2025・2026等）は、検索では見つからなかった。
+- 真理値表・状態遷移表に絞ってテスト生成を説明したページや例題は、調査時点の検索では見つからなかった。上の「設計パターンごとのテスト生成」は、カバレッジのページとテスト生成のページを組み合わせた整理である。
+- 「カバレッジの対象となるモデル オブジェクト」の表は画像で、パターンごとのカバレッジの種類を文字で確かめられなかったため、このファイルには書いていない。各自でページの表を見て確かめる。
+- Stateflowの「真理値表」のカテゴリのページ（日本語版）には、英語版のページがこのリリースで削除された旨の表示があったため載せていない。`Stateflow.TruthTableChart`・`Stateflow.TruthTable`のページから関連するページをたどれる。
