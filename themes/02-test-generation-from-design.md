@@ -1,7 +1,8 @@
 # 02 設計情報からのテスト自動生成
 
 - 確認日: 2026-10-11
-- ドキュメントの版: 一部の日本語版のページにR2026bの表示（日本語版は英語版より更新が遅れることがあり、各ページに英語版へのリンクがある）
+- 調査時点の最新リリース: R2026b
+- 日本語版のページの表示: R2026bのものがある（ページにより英語版より古いことがあり、各ページに英語版へのリンクがある）
 
 ## 概要
 
@@ -43,7 +44,7 @@
 | [Requirements Table ブロックを使用した仕様モデルの作成](https://jp.mathworks.com/help/sldv/ug/what-is-specification-model.html) | 文章の要件をRequirements Tableで形式化し、テスト生成に使う「仕様モデル」を作る | Requirements Toolbox、Simulink Design Verifier |
 | [Requirements Table ブロックからのテストの生成とエクスポート](https://jp.mathworks.com/help/sldv/ug/export-generated-tests-from-requirements-table.html) | 仕様モデルからテストを生成し、Test Managerへエクスポートする手順。スクリプト（`sldvoptions`・`sldvrun`）での実行例もある | Requirements Toolbox、Simulink Design Verifier、Simulink Test |
 | [要件に基づくテストに対する仕様モデルの使用](https://jp.mathworks.com/help/sldv/ug/use-specification-model-for-requirements-based-testing.html) | 例題。仕様モデルで生成したテストを設計モデルに対して実行し、カバレッジを確かめる | Simulink、Simulink Coverage、Simulink Design Verifier、Requirements Toolbox |
-| [機能テストの実行とテスト カバレッジの解析](https://jp.mathworks.com/help/slrequirements/ug/functional-testing-and-coverage-analysis.html) | 要件ベースのテストを実行し、カバレッジの不足を確かめて対処する流れ | Simulink Test、Simulink Coverage、Simulink Design Verifier |
+| [機能テストの実行とテスト カバレッジの解析](https://jp.mathworks.com/help/slrequirements/ug/functional-testing-and-coverage-analysis.html) | 要件ベースのテストを実行し、カバレッジの不足を確かめて対処する流れ | Requirements Toolbox、Simulink Test、Simulink Coverage、Simulink Design Verifier |
 
 ### ドキュメント（Simulink Testでのテストの枠組みの作成）
 
@@ -53,7 +54,7 @@
 | [sltest.testmanager.createTestForComponent](https://jp.mathworks.com/help/sltest/ref/sltest.testmanager.createtestforcomponent.html) | 上のウィザードと同じことをスクリプトで行う。複数のコンポーネントにまとめて作れる（英語） | Simulink Test、R2020b以降 |
 | [sltest.import.sldvData](https://jp.mathworks.com/help/sltest/ref/sltest.import.sldvdata.html) | Simulink Design Verifierの解析結果から、テストハーネスとテストファイルを作る | Simulink Test、Simulink Design Verifier、R2015b以降 |
 
-### 製品ページ
+### 製品・ソリューションのページ
 
 | リンク | 説明 | 製品・リリース |
 |---|---|---|
@@ -65,9 +66,9 @@
 
 | リンク | 説明 | 製品・リリース |
 |---|---|---|
-| [Simulink Agentic Toolkit](https://blogs.mathworks.com/simulink/2026/04/17/simulink-agentic-toolkit/) | 英語。AIエージェントにテスト計画を立てさせ、コンポーネント単位と閉ループのテストをTest Managerに実装させた例（Guy on Simulink、2026年） | Simulink Test |
+| [Simulink Agentic Toolkit](https://blogs.mathworks.com/simulink/2026/04/17/simulink-agentic-toolkit/) | 英語。AIエージェントにテスト計画を立てさせ、コンポーネント単位と閉ループのテストをTest Managerに実装させた例（Guy on Simulink、2026年） | Simulink Agentic Toolkit、Simulink Test |
 
-### 講演資料
+### 講演資料（PDF）
 
 | リンク | 説明 | 製品・リリース |
 |---|---|---|

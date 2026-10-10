@@ -1,7 +1,8 @@
 # 03 プラントモデルをニューラルネットワークに置き換えるサロゲート化
 
 - 確認日: 2026-10-11
-- ドキュメントの版: Reduced Order Modelerアプリは英語版のページでR2025bに導入と表示（日本語版は英語版より更新が遅れることがあり、各ページに英語版へのリンクがある）
+- 調査時点の最新リリース: R2026b
+- 日本語版のページの表示: 確認していない（日本語版は英語版より更新が遅れることがあり、各ページに英語版へのリンクがある）
 
 ## 概要
 
@@ -17,7 +18,7 @@
 | 方法 | 主な関数・アプリ・ブロック | 主な製品 |
 |---|---|---|
 | アプリで一通り行う | Reduced Order Modelerアプリ（`reducedOrderModeler`）。LSTM・非線形ARX・ニューラル状態空間モデル等を選べる | Reduced Order Modeler for MATLAB（アドオン、R2025b以降） |
-| ニューラル状態空間モデル | `idNeuralStateSpace`、`nlssest`、Neural State-Space Modelブロック | System Identification Toolbox（R2022b以降） |
+| ニューラル状態空間モデル | `idNeuralStateSpace`（R2022b以降）、`nlssest`、Neural State-Space Modelブロック | System Identification Toolbox、Deep Learning Toolbox（ネットワークに`dlnetwork`を使う） |
 | LSTM等の深層学習ネットワーク | Stateful Predictブロック、`exportNetworkToSimulink`（R2024b以降） | Deep Learning Toolbox |
 | 非線形ARX（ガウス過程等） | Nonlinear ARX Modelブロック | System Identification Toolbox、Statistics and Machine Learning Toolbox |
 
@@ -48,7 +49,7 @@
 | [Reduced Order Modeling of Electric Vehicle Battery System Using Neural State-Space Model](https://jp.mathworks.com/help/ident/ug/reduced-order-modeling-of-electric-vehicle-battery-system-using-neural-state-space-model.html) | 例題。EVバッテリーの電圧・温度をニューラル状態空間モデルで予測し、Simulinkのブロックとして使う（英語） | System Identification Toolbox、Deep Learning Toolbox、Simscape Battery、Simscape Fluids |
 | [Surrogate Modeling Using Gaussian Process-Based NLARX Model](https://jp.mathworks.com/help/ident/ug/surrogate-modeling-using-gaussian-process-nlarx-model.html) | 例題。ニューラルネットワークでなくガウス過程の非線形ARXでサロゲートを作る別の方法（英語） | System Identification Toolbox、Statistics and Machine Learning Toolbox、Simscape |
 | [ニューラル状態空間モデル](https://jp.mathworks.com/help/ident/neural-state-space-models.html) | カテゴリのページ。ニューラル状態空間モデルの関数・ブロック・例題の一覧 | System Identification Toolbox |
-| [idNeuralStateSpace](https://jp.mathworks.com/help/ident/ref/idneuralstatespace.html) | ニューラル状態空間モデルのオブジェクト。学習は`nlssest`で行う（英語） | System Identification Toolbox、R2022b以降 |
+| [idNeuralStateSpace](https://jp.mathworks.com/help/ident/ref/idneuralstatespace.html) | ニューラル状態空間モデルのオブジェクト。状態と出力の関数はDeep Learning Toolboxの`dlnetwork`で表し、学習は`nlssest`で行う（英語） | System Identification Toolbox、Deep Learning Toolbox、R2022b以降 |
 
 ### ドキュメント（Simulinkへの組み込み）
 
@@ -83,5 +84,5 @@
 
 ## 補足
 
-- Reduced Order Modelerアプリは、以前はFile Exchangeのベータ版のサポートパッケージ（Reduced Order Modeling Support Package）として配布されていた。File Exchangeの案内によると、R2025b Update 3以降はReduced Order Modeler for MATLABに置き換わっている。古い記事の手順は、名前や入手方法が変わっていることがある。
+- Reduced Order Modelerアプリは、以前はFile Exchangeのベータ版のサポートパッケージ（Reduced Order Modeling Support Package）として配布されていた。アプリのリファレンスのページの表示は「R2025bで導入」で、アドオン（Reduced Order Modeler for MATLAB）はアドオン エクスプローラーから入手する。一方、File Exchangeの案内では、ベータ版がReduced Order Modeler for MATLABに置き換わったのはR2025b Update 3以降とされている。R2025bの初期の版で使う場合は、どちらで入手するかを確かめる。古い記事の手順は、名前や入手方法が変わっていることがある。
 - 講演資料（PDF）: このテーマを主題にした資料は、調査時点の検索では見つからなかった。MathWorksの「[イベントの講演資料を検索](https://jp.mathworks.com/company/events/conferences/search-proceedings.html)」のページで「低次元化」「サロゲート」等の語で探すと見つかる可能性がある。

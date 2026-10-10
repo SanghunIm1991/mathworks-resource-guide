@@ -1,11 +1,12 @@
 # 01 プログラムによるSimulinkモデルのブロックとコンフィギュレーションの変更
 
 - 確認日: 2026-10-11
-- ドキュメントの版: 日本語版のページはR2026aの表示（日本語版は英語版より更新が遅れることがあり、各ページに英語版へのリンクがある）
+- 調査時点の最新リリース: R2026b
+- 日本語版のページの表示: R2026a（各ページに英語版へのリンクがある）
 
 ## 概要
 
-MATLABのスクリプトから、Simulinkモデルのブロックの追加・置換・削除・パラメーター変更や、コンフィギュレーションパラメーター（ソルバー、コード生成の設定等）の変更を行える。多数のモデルへの同じ変更、設定の統一、モデルの自動生成などに使う。Simulink本体の機能で、追加のツールボックスは要らない。
+MATLABのスクリプトから、Simulinkモデルのブロックの追加・置換・削除・パラメーター変更や、コンフィギュレーションパラメーター（ソルバー、コード生成の設定等）の変更を行える。多数のモデルへの同じ変更、設定の統一、モデルの自動生成などに使う。モデル編集のAPI自体はSimulink本体の機能である（ただし、コード生成など他の製品に属するパラメーターを設定するには、その製品が要る）。
 
 | やりたいこと | 主な関数 |
 |---|---|
@@ -40,6 +41,7 @@ MATLABのスクリプトから、Simulinkモデルのブロックの追加・置
 | [Simulink.findBlocksOfType](https://jp.mathworks.com/help/simulink/slref/simulink.findblocksoftype.html) | ブロックの種類（BlockType）を指定して検索する | Simulink、R2018a以降 |
 | [add_block](https://jp.mathworks.com/help/simulink/slref/add_block.html) | ライブラリ等のブロックをモデルに追加する。追加と同時にパラメーターも指定できる | Simulink |
 | [add_line](https://jp.mathworks.com/help/simulink/slref/add_line.html) | ブロック間を線でつなぐ | Simulink |
+| [delete_block](https://jp.mathworks.com/help/simulink/slref/delete_block.html) | ブロックを削除する。パスかハンドルで指定し、複数をまとめて削除できる | Simulink |
 | [Add, Copy, Replace, and Delete Blocks Programmatically](https://jp.mathworks.com/help/simulink/ug/add-copy-replace-and-delete-blocks-programmatically.html) | ブロックの追加・コピー・置換・削除をまとめた解説（英語） | Simulink |
 | [replace_block](https://jp.mathworks.com/help/simulink/slref/replace_block.html) | 条件に合うブロックを別のブロックに一括で置き換える。`"noprompt"`で確認のダイアログを省ける | Simulink |
 | [Simulink.BlockDiagram.arrangeSystem](https://jp.mathworks.com/help/simulink/slref/simulink.blockdiagram.arrangesystem.html) | ブロックの配置と線を自動で整える。指定した階層だけが対象 | Simulink、R2018a以降 |
