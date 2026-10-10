@@ -75,6 +75,14 @@
 | [Reduced Order Modeler App: 低次元化モデル（ROM）をインタラクティブに構築](https://blogs.mathworks.com/japan-community/2024/11/08/reduced-order-modeler-app-how-to-interactively-create-ai-based-reduced-order-models-roms-jp/) | チュートリアル | 日本語。アプリでタービンブレードのROMを作り、Simulinkへエクスポートする例（MATLAB ユーザーコミュニティー、2024年。英語の記事の翻訳）。当時はベータ版のサポートパッケージで、現在はReduced Order Modeler for MATLABに置き換わっている | Reduced Order Modeler for MATLAB |
 | [Deep Learning Based Surrogate Models](https://blogs.mathworks.com/deep-learning/2021/05/21/deep-learning-based-surrogate-models/) | サンプル | 英語。永久磁石同期モーターの電気・熱の挙動をLSTMのサロゲートで置き換え、Simulinkへ書き出す例（2021年） | Deep Learning Toolbox |
 
+### 講演資料（PDF）
+
+| リンク | 用途 | 説明 | 製品・リリース |
+|---|---|---|---|
+| [1D解析における AIサロゲートモデルの適用（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/images/events/matlabexpo/jp/2023/application-of-ai-surrogate-models-in-1d-analysis.pdf) | サンプル | 日本語。MATLAB EXPO 2023 Japanのユーザー講演（SUBARU）。計算の重いトランスミッションの油圧制御のモデルを、Neural ODEのAIモデルで置き換え、計算負荷を下げつつ必要な精度を保った事例。下の動画は同じ講演の録画 | MATLAB ほか |
+| [データ駆動モデリングと制御（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/images/events/matlabexpo/jp/2024/control-ai-algorithm-integration-with-model-based-design.pdf) | 概要 | MATLAB EXPO 2024 JapanのMathWorksの講演（MBD 04）。AIによるサロゲートモデリングと、周波数応答の推定に基づく制御設計・制御ゲインの最適化の流れ | Simulink Design Optimization、Optimization Toolbox ほか |
+| [BMS（バッテリーマネジメントシステム）の先進アルゴリズム開発（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/company/events/webinar-cta/2020_bms-advanced-algorithm-development.pdf) | サンプル | 日本語。MathWorks Japanのウェビナーの資料（2020年）。バッテリーの実験データからニューラルネットワークで劣化の予測モデルを作る例と、非線形カルマンフィルターによるSOC推定。プラントの置き換えそのものではないが、データからニューラルネットワークのモデルを作る流れの参考になる（古い資料） | — |
+
 ### 動画
 
 | リンク | 用途 | 説明 | 製品・リリース |
@@ -82,9 +90,11 @@
 | [モデルベース開発の新時代へ - AI 活用が切り開く新境地と効率化](https://www.mathworks.com/videos/ai-with-model-based-design-1722926819909.html) | 概要 | 日本語のウェビナー、約45分（2024年）。ROMによるシミュレーションの高速化、サロゲートモデル、仮想センサー等、AIモデルをSimulinkで使う方法のまとめ | Deep Learning Toolbox ほか |
 | [AI with Model-Based Design: Reduced Order Modeling](https://www.mathworks.com/videos/ai-with-model-based-design-reduced-order-modeling-1670274257624.html) | 概要 | 英語、約45分（2024年）。ジェットエンジンのブレードの高忠実度シミュレーションからAIベースのROMを作り、制御設計・HILテスト・組み込みに使う | Deep Learning Toolbox、System Identification Toolbox ほか |
 | [What Is the Reduced Order Modeler App?](https://www.mathworks.com/videos/what-is-the-reduced-order-modeler-app-1712575809152.html) | 概要 | 英語、約4分（2026年）。アプリでSimulinkのサブシステムのROMを作る方法の紹介 | Reduced Order Modeler for MATLAB |
+| [1D解析におけるAIサロゲートモデルの適用](https://www.mathworks.com/videos/application-of-ai-surrogate-models-in-1d-analysis-1687793664976.html) | サンプル | 日本語、約20分（2023年）。MATLAB EXPO 2023 JapanのSUBARUの講演の録画。トランスミッションの油圧制御のモデルをNeural ODEのサロゲートで置き換えた事例（上の講演資料と同じ内容） | MATLAB ほか |
 | [AI・学習モデルのSimulink実装とコード自動生成](https://www.youtube.com/watch?v=yknhTjZhuoQ) | チュートリアル | 日本語。学習済みのネットワークをSimulinkに組み込み、コードを生成する方法（YouTube「MATLAB Japan」チャンネル） | Deep Learning Toolbox ほか |
 
 ## 補足
 
 - Reduced Order Modelerアプリは、以前はFile Exchangeのベータ版のサポートパッケージ（Reduced Order Modeling Support Package）として配布されていた。アプリのリファレンスのページの表示は「R2025bで導入」で、アドオン（Reduced Order Modeler for MATLAB）はアドオン エクスプローラーから入手する。一方、File Exchangeの案内では、ベータ版がReduced Order Modeler for MATLABに置き換わったのはR2025b Update 3以降とされている。R2025bの初期の版で使う場合は、どちらで入手するかを確かめる。古い記事の手順は、名前や入手方法が変わっていることがある。
-- 講演資料（PDF）: このテーマを主題にした資料は、調査時点の検索では見つからなかった。MathWorksの「[イベントの講演資料を検索](https://jp.mathworks.com/company/events/conferences/search-proceedings.html)」のページで「低次元化」「サロゲート」等の語で探すと見つかる可能性がある。
+- 講演資料（PDF）: 最初の調査の検索では見つからず、ユーザーから教わった3件を載せた。ほかの資料は、MathWorksの「[イベントの講演資料を検索](https://jp.mathworks.com/company/events/conferences/search-proceedings.html)」のページで「低次元化」「サロゲート」等の語で探すと見つかる可能性がある。
+- 講演資料のURL: 教わったURLは`ch.mathworks.com`と`www.matlabexpo.com`のものだったが、READMEの規則に従い、同じパスで`www.mathworks.com`から取得できることを確かめて、そちらで載せた。PDFの本文はツールで読めなかったため、説明は検索結果に出た資料の題名・目次と、講演の動画のページの説明から書いた。
