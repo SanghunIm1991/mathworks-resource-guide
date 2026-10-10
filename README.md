@@ -9,7 +9,7 @@ MathWorks社とは無関係の非公式のリンク集である。MATLAB・Simul
 | No. | テーマ | ファイル | 確認日 |
 |---|---|---|---|
 | 01 | プログラムによるSimulinkモデルのブロックとコンフィギュレーションの変更 | [themes/01-programmatic-model-editing.md](themes/01-programmatic-model-editing.md) | 2026-10-11 |
-| 02 | 設計情報からのテスト自動生成 | （作成中） | |
+| 02 | 設計情報からのテスト自動生成 | [themes/02-test-generation-from-design.md](themes/02-test-generation-from-design.md) | 2026-10-11 |
 | 03 | プラントモデルをニューラルネットワークに置き換えるサロゲート化 | （作成中） | |
 
 ## 情報源の範囲
