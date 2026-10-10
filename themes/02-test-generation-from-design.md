@@ -20,7 +20,7 @@
 
 ### 設計パターンごとのテスト生成
 
-真理値表・状態遷移表などの設計パターンに専用のテスト生成の機能があるわけではない。Simulink Design Verifierのカバレッジを満たすテスト生成を、そのパターンを含むモデルに対して実行する。パターンごとに対象になるカバレッジ（判定・条件・MCDC・関係演算子の境界等）が違うので、目標のカバレッジを選ぶ前に「カバレッジの対象となるモデル オブジェクト」の表で確かめる。
+調査時点では、真理値表・状態遷移表・Stateflowチャートに絞った専用のテスト生成の機能は見つからなかった。これらは、パターンを含むモデルに対してSimulink Design Verifierのカバレッジを満たすテスト生成を行う（Requirements Tableだけは要件ベースのテスト生成がある）。対象になるカバレッジの種類（判定・条件・MC/DC・関係演算子の境界等）はブロックによって違いうるので、目標のカバレッジを選ぶ前に「カバレッジの対象となるモデル オブジェクト」の表で確かめる。
 
 | 設計パターン | テスト生成の方法 | モデルをスクリプトで作る・読む |
 |---|---|---|
@@ -41,7 +41,8 @@
 2. 要件から作るなら「Requirements Table ブロックを使用した仕様モデルの作成」→「Requirements Table ブロックからのテストの生成とエクスポート」→例題「要件に基づくテストに対する仕様モデルの使用」
 3. カバレッジの穴を埋めるなら「テスト生成用のモデル カバレッジ オブジェクティブ」と「既存テスト ケースの定義および拡張」
 4. Test Managerでの管理は「SimulinkTest へのテスト ケースのエクスポート」と`sltest.import.sldvData`
-5. 真理値表・状態遷移表等で生成するなら、「カバレッジの対象となるモデル オブジェクト」で目標のカバレッジを決める。スクリプトで操作するなら、例題「Stateflow チャートでのカスタム コードのテスト生成」で`sldvoptions`→`sldvrun`→`sldvruntest`の流れをつかみ、「Design Verifier ペイン: テスト生成」でオプションの名前を引く
+5. 真理値表・状態遷移表等で生成するなら、「カバレッジの対象となるモデル オブジェクト」で目標のカバレッジを決める
+6. スクリプトで操作するなら、例題「Stateflow チャートでのカスタム コードのテスト生成」で`sldvoptions`→`sldvrun`→`sldvruntest`の流れをつかみ、「Design Verifier ペイン: テスト生成」でオプションの名前を引く
 
 ## リンク
 
@@ -78,7 +79,7 @@
 
 | リンク | 用途 | 説明 | 製品・リリース |
 |---|---|---|---|
-| [カバレッジの対象となるモデル オブジェクト](https://jp.mathworks.com/help/slcoverage/ug/model-objects-that-receive-coverage.html) | 辞書 | ブロックごとに、どの種類のカバレッジ（判定・条件・MCDC・関係演算子の境界等）の対象になるかの表。Truth Table・State Transition Table・Requirements Table・Stateflowチャートの行もある | Simulink Coverage |
+| [カバレッジの対象となるモデル オブジェクト](https://jp.mathworks.com/help/slcoverage/ug/model-objects-that-receive-coverage.html) | 辞書 | ブロックごとに、どの種類のカバレッジ（判定・条件・MC/DC・関係演算子の境界等）の対象になるかの表（表は画像） | Simulink Coverage |
 | [Stateflow 真理値表のモデル カバレッジ](https://jp.mathworks.com/help/slcoverage/ug/coverage-for-truth-tables.html) | 辞書 | 真理値表のカバレッジ。クラシックの真理値表とMATLABの真理値表で、対象になるものが違う | Simulink Coverage、Stateflow |
 | [Stateflow チャートのモデル カバレッジ](https://jp.mathworks.com/help/slcoverage/ug/coverage-for-stateflow-charts.html) | 辞書 | チャートのステート・遷移のカバレッジ。状態遷移表の節もあり、同じ内容のチャートと同じ結果になることや、`after`等の時相論理の扱いがアクション言語で違うことを説明している | Simulink Coverage、Stateflow |
 | [拡張 MCDC 解析用のモデルの解析](https://jp.mathworks.com/help/sldv/ug/analyze-a-model-for-enhanced-mcdc-analysis.html) | サンプル | 例題。条件の組み合わせをより厳しく確かめる「拡張MCDC」を目標にテストを生成する（操作はUIが中心） | Simulink Design Verifier |
