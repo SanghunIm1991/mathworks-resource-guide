@@ -24,6 +24,7 @@ MATLABのスクリプトから、Simulinkモデルのブロックの追加・置
 1. 「プログラムによるモデル化の基礎」で、モデルの作成から保存までの流れをつかむ
 2. ブロックを変えるなら「プログラムによるブロックのパラメーターとプロパティの指定」と`set_param`、設定を変えるなら「スクリプトを使用したモデル コンフィギュレーションの自動化」
 3. 必要に応じて各関数のリファレンスと、カテゴリのページ「プログラムによるモデル編集」で関数を探す
+4. `set_param`に渡すパラメーターの名前は、ブロックなら各ブロックのリファレンス（「ブロック ライブラリ」から探す）、コンフィギュレーションなら「モデルに対するモデル コンフィギュレーション パラメーターの設定」からたどるペインごとの一覧で調べる
 
 ## リンク
 
@@ -35,7 +36,9 @@ MATLABのスクリプトから、Simulinkモデルのブロックの追加・置
 |---|---|---|---|
 | [プログラムによるモデル編集](https://jp.mathworks.com/help/simulink/programmatic-modeling.html) | 辞書 | カテゴリのページ。モデルの作成・編集・検索に使う関数と解説の一覧 | Simulink |
 | [プログラムによるモデル化の基礎](https://jp.mathworks.com/help/simulink/ug/approach-modeling-programmatically.html) | チュートリアル | モデルの作成・読み込み・パラメーター設定・保存の基本の流れ。最初に読む入門 | Simulink |
-| [プログラムによるブロックのパラメーターとプロパティの指定](https://jp.mathworks.com/help/simulink/slref/block-parameters-and-properties.html) | チュートリアル | `get_param`・`set_param`でブロックのパラメーターや位置・向きを変える例 | Simulink |
+| [プログラムによるブロックのパラメーターとプロパティの指定](https://jp.mathworks.com/help/simulink/slref/block-parameters-and-properties.html) | チュートリアル | `get_param`・`set_param`でブロックのパラメーターや位置・向きを変える例。全ブロック共通のプロパティ（`Position`・`Orientation`等）の一覧表と、ブロック固有のパラメーター名の調べ方（プロパティ インスペクターの「スクリプト リファレンス」、`get_param`の`DialogParameters`等）もここ | Simulink |
+| [ブロック ライブラリ](https://jp.mathworks.com/help/simulink/block-libraries.html) | 辞書 | ライブラリ（Sources・Math Operations等）ごとのブロックのカテゴリの一覧。各ブロックのリファレンスのページで、パラメーターごとの「プログラムでの使用」に`set_param`で使う名前と値が書いてある | Simulink |
+| [Gain](https://jp.mathworks.com/help/simulink/slref/gain.html) | 辞書 | ブロックのリファレンスの例。「プログラムでの使用」に`Gain`・`SampleTime`・`OutDataTypeStr`等の名前がある（この節がないパラメーターもある） | Simulink |
 | [set_param](https://jp.mathworks.com/help/simulink/slref/set_param.html) | 辞書 | モデル・ブロック・線・端子のパラメーターを設定する。複数のパラメーターは1回の呼び出しでまとめて設定するのが推奨 | Simulink |
 | [get_param](https://jp.mathworks.com/help/simulink/slref/get_param.html) | 辞書 | パラメーターの名前と値を取得する。設定できるパラメーター名を調べるのにも使う | Simulink |
 | [find_system](https://jp.mathworks.com/help/simulink/slref/find_system.html) | 辞書 | 条件を指定してブロック・線・端子等を検索する。マスクの下やライブラリリンクは既定では検索しない点に注意 | Simulink |
@@ -56,6 +59,9 @@ MATLABのスクリプトから、Simulinkモデルのブロックの追加・置
 | [モデル コンフィギュレーション セット](https://jp.mathworks.com/help/simulink/configuration-sets.html) | 辞書 | カテゴリのページ。コンフィギュレーションセットの関数と解説の一覧 | Simulink |
 | [スクリプトを使用したモデル コンフィギュレーションの自動化](https://jp.mathworks.com/help/simulink/ug/configuration-set-api.html) | チュートリアル | アクティブなセットの取得・変更、コピーして別のセットを追加・切り替え、2つのセットの差分の比較（`isequal`）までの例 | Simulink |
 | [モデルのコンフィギュレーション セットの管理](https://jp.mathworks.com/help/simulink/ug/setting-up-configuration-sets.html) | 概要 | 1つのモデルに複数のセットを持たせ、切り替える考え方 | Simulink |
+| [モデルに対するモデル コンフィギュレーション パラメーターの設定](https://jp.mathworks.com/help/simulink/ug/configuration-parameters-dialog-box-overview.html) | 辞書 | コンフィギュレーションパラメーターの一覧への入口。ペイン（ソルバー、データのインポート/エクスポート、診断等と、コード生成・Design Verifier等の製品のペイン）ごとの一覧ページにリンクがある。ダイアログでパラメーターを右クリックして「これはなに?」を選ぶと、スクリプトで使う名前が分かる | Simulink ほか |
+| [[ソルバー] ペイン](https://jp.mathworks.com/help/simulink/gui/solver-pane.html) | 辞書 | ペインごとの一覧の例。各パラメーターのページの「プログラムでの使用」に`set_param`で使う名前がある（例: ソルバーは`SolverName`） | Simulink |
+| [モデル コンフィギュレーション パラメーター: コード生成](https://jp.mathworks.com/help/rtw/ref/code-generation-pane-general.html) | 辞書 | コード生成のペインのパラメーターの一覧（システム ターゲット ファイル、言語等）。最適化・レポート・インターフェイス等の関連ペインにもリンクがある | Simulink Coder |
 | [Simulink.ConfigSet](https://jp.mathworks.com/help/simulink/slref/simulink.configset.html) | 辞書 | コンフィギュレーションセットのオブジェクト | Simulink、R2006a以降 |
 | [getActiveConfigSet](https://jp.mathworks.com/help/simulink/slref/getactiveconfigset.html) | 辞書 | モデルのアクティブなセットを取得する | Simulink |
 | [attachConfigSet](https://jp.mathworks.com/help/simulink/slref/attachconfigset.html) | 辞書 | セットをモデルに関連付ける（関連付けただけではアクティブにならない） | Simulink |
@@ -81,4 +87,6 @@ MATLABのスクリプトから、Simulinkモデルのブロックの追加・置
 
 - 講演資料・ウェビナー資料: このテーマ（モデル編集のAPI）を主題にした資料は、調査時点の検索では見つからなかった。
 - 日本語の動画: 「MATLAB Japan」チャンネルで、このテーマを主題にした動画は見つからなかった。
+- 全ブロック共通のプロパティとブロック固有のパラメーターの一覧は、以前は別のページ（`common-block-parameters.html`・`block-specific-parameters.html`）にあったが、調査時点では`www.`・`jp.`ともに404だった。共通のプロパティは「プログラムによるブロックのパラメーターとプロパティの指定」に、ブロック固有のパラメーターは各ブロックのリファレンスに移っている。
+- 「プログラムによる内部のモデル設定」（`model-parameters.html`）というページもあるが、MathWorksの内部用に予約されたモデルパラメーターの一覧で、ユーザーが設定するものではないため載せていない。
 - `find_system`の`Variants`引数は将来のリリースで削除予定とされている。バリアントを含むモデルの検索では`MatchFilter`を使う（`find_system`のページ参照）。
