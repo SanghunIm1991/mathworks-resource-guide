@@ -1,0 +1,13 @@
+# OS・エディタが生成するファイル
+Thumbs.db
+desktop.ini
+.vscode/
+
+# Claude Code の個人設定
+.claude/settings.local.json
+
+# 手元にだけ置く資料（初回調査結果のコピー、ダウンロードした講演資料等）
+local/
+
+# 第三者の資料（講演資料のPDF等）を誤ってコミットしないため
+*.pdf

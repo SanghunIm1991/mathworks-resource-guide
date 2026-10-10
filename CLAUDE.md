@@ -1,0 +1,15 @@
+# mathworks-resource-guide
+
+MATLAB/Simulinkの公式情報（MathWorksのサイト、講演資料、公式YouTubeチャンネル）を、テーマごとに「概要」と「リンク」で整理するリンク集のプロジェクト。元アイデアは`docs/idea_origin.md`、判断の経緯は`docs/qa_log.md`（QA表、`qa-log`スキルに従う）。
+
+## 公開できる状態を前提にする（必ず守る）
+
+- GitHubのリポジトリはprivateで運用する。publicに切り替えるかはユーザーが判断し、公開の操作はユーザーが行う。
+- 機密情報・個人情報・第三者の著作物を、追跡するファイルにもコミットのauthor・committer欄にも入れない。手元にだけ置くもの（初回調査結果のコピー、ダウンロードした講演資料等）は`local/`に置く（`.gitignore`で除外済み。`*.pdf`も除外）。
+- 第三者のページの文章は転載せず、リンクと自分の言葉での要約だけを載せる。
+- pushの前に、`public-release-review`スキルの手順1（機械点検）と手順2（目視点検）の観点で点検する。QA表などの記録の文書とコミットメッセージも対象にする。
+
+## Git運用
+
+- コミット規約は`git-conventions`スキルに従う（`[claude]`接頭辞、Co-Authored-Byトレーラー、コミット前の`user.email`がnoreplyアドレスであることの確認）。
+- `git push`は都度確認とする（コミットは作業完了時に自動でよいが、pushは毎回承認を得る）。
