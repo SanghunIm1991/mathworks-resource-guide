@@ -14,7 +14,7 @@
 
 大事なのは、サロゲートモデルは内部の物理を再現するのではなく、**入力と出力の関係をまねる**ということである。そのため、学習に使ったデータの範囲の外では、精度の保証がない。どのような入力でデータを集めるか（**実験計画**）と、元のモデルと比べて誤差が許容できるかの**検証**が、学習そのものと同じくらい重要になる。
 
-時間とともに状態が変わる動的なプラントには、過去の入力の影響を覚えておけるモデルを使う。代表的なものは、時系列を扱うニューラルネットワークの**LSTM**、状態の時間変化（微分方程式）をニューラルネットワークで表す**ニューラル状態空間モデル**、過去の入出力から次の出力を予測する**非線形ARX**である。
+時間とともに状態が変わる動的なプラントには、過去の入力の影響を覚えておけるモデルを使う。代表的なものは、時系列を扱うニューラルネットワークの**LSTM**、状態の時間変化（連続時間では微分方程式、離散時間では次の時刻の状態）をニューラルネットワークで表す**ニューラル状態空間モデル**、過去の入出力から次の出力を予測する**非線形ARX**である。
 
 入門の内容は、次の6つの項目に分けられる。番号は、下の関連図の行と同じである。
 
@@ -33,7 +33,7 @@
 
 ### 方法の整理
 
-計算の重いプラントモデル（物理モデル、FEM等の高忠実度モデル）を、その入出力データで学習したニューラルネットワーク等の軽いモデルに置き換える。MathWorksは「低次元化モデリング（Reduced Order Modeling、ROM）」と呼んでいる。シミュレーションの高速化、HILテスト、制御設計、仮想センサー等に使う。精度は元のモデルより落ちるので、許容できる誤差かを確かめて使う。
+上で説明したROMは、シミュレーションの高速化、HILテスト、制御設計、仮想センサー等に使う。精度は元のモデルより落ちるので、許容できる誤差かを確かめて使う。
 
 基本の流れは次の4段階。
 
@@ -106,8 +106,8 @@
 
 | リンク | 用途 | 説明 | 製品・リリース |
 |---|---|---|---|
-| [1D解析における AIサロゲートモデルの適用（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/images/events/matlabexpo/jp/2023/application-of-ai-surrogate-models-in-1d-analysis.pdf) | サンプル | 日本語。MATLAB EXPO 2023 Japanのユーザー講演（SUBARU）。計算の重いトランスミッションの油圧制御のモデルを、Neural ODEのAIモデルで置き換え、計算負荷を下げつつ必要な精度を保った事例。下の動画は同じ講演の録画 | MATLAB ほか |
-| [データ駆動モデリングと制御（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/images/events/matlabexpo/jp/2024/control-ai-algorithm-integration-with-model-based-design.pdf) | 概要 | MATLAB EXPO 2024 JapanのMathWorksの講演（MBD 04）。AIによるサロゲートモデリングと、周波数応答の推定に基づく制御設計・制御ゲインの最適化の流れ | Simulink Design Optimization、Optimization Toolbox ほか |
+| [1D解析における AIサロゲートモデルの適用（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/images/events/matlabexpo/jp/2023/application-of-ai-surrogate-models-in-1d-analysis.pdf) | サンプル | 日本語。MATLAB EXPO 2023 Japanのユーザー講演（SUBARU）。計算の重いトランスミッションの油圧制御のモデルを、Neural ODEのAIモデルで置き換え、計算負荷の低減を図った事例。下の動画は同じ講演の録画 | MATLAB ほか |
+| [データ駆動モデリングと制御（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/images/events/matlabexpo/jp/2024/control-ai-algorithm-integration-with-model-based-design.pdf) | 概要 | 日本語。MATLAB EXPO 2024 JapanのMathWorksの講演（MBD 04）。AIによるサロゲートモデリングと、周波数応答の推定に基づく制御設計・制御ゲインの最適化の流れ | Simulink Design Optimization、Optimization Toolbox ほか |
 | [BMS（バッテリーマネジメントシステム）の先進アルゴリズム開発（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/company/events/webinar-cta/2020_bms-advanced-algorithm-development.pdf) | サンプル | 日本語。MathWorks Japanのウェビナーの資料（2020年）。バッテリーの実験データからニューラルネットワークで劣化の予測モデルを作る例と、非線形カルマンフィルターによるSOC推定。プラントの置き換えそのものではないが、データからニューラルネットワークのモデルを作る流れの参考になる（古い資料） | — |
 
 ### 動画

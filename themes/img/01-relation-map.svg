@@ -87,8 +87,8 @@
 <text x="957.0" y="353.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">set_param</text>
 <text x="957.0" y="387.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">get_param</text>
 <text x="207.0" y="433.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔ブログ〕Time to convert from</text>
-<text x="207.0" y="449.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">find_system to</text>
-<text x="207.0" y="465.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulink.findBlocks</text>
+<text x="207.0" y="449.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">find_system to Simulink.</text>
+<text x="207.0" y="465.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">findBlocks</text>
 <text x="957.0" y="433.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">find_system</text>
 <text x="957.0" y="467.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulink.findBlocks</text>
 <text x="957.0" y="501.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulink.findBlocksOfType</text>
@@ -103,8 +103,8 @@
 <text x="957.0" y="631.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">add_line</text>
 <text x="957.0" y="665.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">delete_block</text>
 <text x="957.0" y="699.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">replace_block</text>
-<text x="957.0" y="733.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulink.BlockDiagram.arrange</text>
-<text x="957.0" y="749.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">System</text>
+<text x="957.0" y="733.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulink.BlockDiagram.</text>
+<text x="957.0" y="749.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">arrangeSystem</text>
 <text x="207.0" y="795.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">モデルのコンフィギュレーション セッ</text>
 <text x="207.0" y="811.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">トの管理</text>
 <text x="457.0" y="795.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">スクリプトを使用したモデル コンフィ</text>
