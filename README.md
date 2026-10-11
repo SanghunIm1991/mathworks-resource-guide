@@ -13,6 +13,7 @@ MathWorks社とは無関係の非公式のリンク集である。MATLAB・Simul
 | 01 | プログラムによるSimulinkモデルのブロックとコンフィギュレーションの変更 | [themes/01-programmatic-model-editing.md](themes/01-programmatic-model-editing.md) | 2026-10-11 |
 | 02 | 設計情報からのテスト自動生成 | [themes/02-test-generation-from-design.md](themes/02-test-generation-from-design.md) | 2026-10-11 |
 | 03 | プラントモデルをニューラルネットワークに置き換えるサロゲート化 | [themes/03-surrogate-model-with-neural-network.md](themes/03-surrogate-model-with-neural-network.md) | 2026-10-11 |
+| 04 | 古典制御と現代制御でできること | [themes/04-classical-and-modern-control.md](themes/04-classical-and-modern-control.md) | 2026-10-11 |
 
 ## 情報源の範囲
 
