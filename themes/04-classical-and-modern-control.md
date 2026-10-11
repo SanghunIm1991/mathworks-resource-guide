@@ -12,11 +12,11 @@
 
 制御設計の考え方は、大きく2つの流れに分けて教えられることが多い。
 
-**古典制御**は、プラントを**伝達関数**（入力から出力への関係を、ラプラス変換の変数 s の分数式で表したもの）で表し、主に1入力1出力（**SISO**）の系を扱う。いろいろな周波数の正弦波を入れたときの出力の大きさと位相のずれ（**周波数応答**）をボード線図で見て、不安定になるまでの余裕（**ゲイン余裕・位相余裕**）を確かめながら、PID制御器や位相進み・遅れの補償器を調整する。図の上で設計できて直感的で、実機の調整とも結び付けやすい。
+**古典制御**は、プラントを**伝達関数**（初期値をゼロとしたときの、出力と入力のラプラス変換の比。連続時間ではラプラス変換の変数 s の分数式になる）で表し、主に1入力1出力（**SISO**）の系を扱う。いろいろな周波数の正弦波を入れたときの出力の大きさと位相のずれ（**周波数応答**）をボード線図で見て、不安定になるまでの余裕（**ゲイン余裕・位相余裕**）を確かめながら、PID制御器や位相進み・遅れの補償器を調整する。図の上で設計できて直感的で、実機の調整とも結び付けやすい。
 
-**現代制御**は、プラントを**状態空間モデル**（内部の状態 x の時間変化を、行列 A・B・C・D を使った1階の微分方程式で表したもの）で表す。多入力多出力（**MIMO**）の系をそのまま扱え、全部の状態を使ったフィードバック（**状態フィードバック**）で、閉ループの**極**（応答の速さと減衰を決める値）を指定の位置に置いたり（**極配置**）、状態のずれと操作の大きさの重み付きの和を最小にしたり（**LQR**、最適制御）できる。状態を全部は測れないときは、測れる出力から状態を推定する**オブザーバー**や**カルマンフィルター**を組み合わせる（LQRとカルマンフィルターの組み合わせが**LQG**）。ただし、状態フィードバックで極を自由に動かすには、入力で全部の状態を動かせること（**可制御性**）が、状態を推定するには、出力から全部の状態が分かること（**可観測性**）が前提になる。
+**現代制御**は、プラントを**状態空間モデル**（行列 A・B・C・D を使い、内部の状態 x の時間変化を1階の連立微分方程式で、出力を状態と入力の式で表したもの）で表す。多入力多出力（**MIMO**）の系をそのまま扱え、全部の状態を使ったフィードバック（**状態フィードバック**）で、閉ループの**極**（応答の速さと減衰を決める値）を指定の位置に置いたり（**極配置**）、状態と操作量のそれぞれの2乗に重みを付けて足し、時間で積分した評価関数を最小にしたり（**LQR**、最適制御）できる。状態を全部は測れないときは、測れる出力から状態を推定する**オブザーバー**や**カルマンフィルター**を組み合わせる（LQRとカルマンフィルターの組み合わせが**LQG**）。ただし、状態フィードバックで閉ループの極を自由な位置に置くには、入力を操作して、どの状態からでも望みの状態へ移せること（**可制御性**）が要る。同じように、オブザーバーの極を自由な位置に置くには、出力の観測から状態が分かること（**可観測性**）が要る。
 
-2つは対立するものではない。同じ線形のモデルを別の見方で扱うもので、MATLABのControl System Toolboxでは、伝達関数のモデルと状態空間のモデルを相互に変換でき、どちらの設計の道具も同じモデルに使える。現代制御の考え方は、モデルの不確かさを考えるロバスト制御や、制約を考えながら未来の応答を予測して操作を決めるモデル予測制御（MPC）へと発展している。
+2つは対立するものではない。同じ線形のモデルを別の見方で扱うもので、MATLABのControl System Toolboxでは、伝達関数のモデルと状態空間のモデルを相互に変換でき、どちらの設計の道具も同じモデルに使える。ただし、状態空間から伝達関数に変換すると、入力で動かせない・出力に現れない内部の動き（可制御でない・可観測でないモード）は見えなくなる。現代制御の考え方は、モデルの不確かさを考えるロバスト制御や、制約を考えながら未来の応答を予測して操作を決めるモデル予測制御（MPC）へと発展している。
 
 入門の内容は、次の7つの項目に分けられる。番号は、下の関連図の行と同じである。
 
@@ -42,10 +42,10 @@
 | 主な対象 | 1入力1出力（SISO） | 多入力多出力（MIMO）もそのまま扱える |
 | 設計の手がかり | 周波数応答（ボード線図）、ゲイン余裕・位相余裕、根軌跡 | 閉ループの極の位置、評価関数の重み（LQRの Q と R） |
 | 主な制御器 | PID、位相進み・遅れの補償器 | 状態フィードバック（極配置・LQR）、オブザーバー・カルマンフィルターとの組み合わせ（LQG） |
-| 前提 | 入出力の関係が分かればよい（実測した周波数応答からも設計できる） | 状態空間のモデルが要る。極配置には可制御性、状態の推定には可観測性が要る |
+| 前提 | 入出力の関係（伝達関数）が分かればよい。周波数領域の設計は、実測した周波数応答のデータ（`frd`）からもできる | 状態空間のモデルが要る。極を自由に置くには可制御性、オブザーバーの極を自由に置くには可観測性が要る |
 | 主な関数・アプリ | `bode`・`margin`・`rlocus`・`pidtune`、PID Tuner、Control System Designer | `ctrb`・`obsv`・`place`・`lqr`・`kalman`・`lqg` |
 
-どちらもControl System Toolboxの機能で、対象は線形のモデルである。極配置のページは、根軌跡と違い、極配置ならMIMOの系や動的な補償器も設計できると説明している。また、同じ極を重ねて置く、可制御性・可観測性の弱い極を大きく動かす、といった選び方は、大きなゲインを要して外乱に敏感になるので避けるよう注意している。モデルの表し方については、数値計算の精度の面では状態空間の表現が適しており、伝達関数や零点・極・ゲインの形は仕様の確認に使うとよい、と説明されている。
+どちらもControl System Toolboxの機能で、対象は線形のモデルである。極配置のページは、根軌跡がSISOの系で補償器のゲインを動かして閉ループの極を移すのに対し、状態空間による極配置はMIMOの系にも使え、動的な補償器も設計できる、と説明している。また、極の位置の選び方として、複数の極を同じ位置に置くことと、可制御性・可観測性の弱い極を動かすことを避けるよう注意している。後者は一般に高いゲインを要し、外乱に非常に敏感な閉ループになるためである。モデルの表し方については、状態空間の表現が数値計算に最適で、精度のためには、モデルを組み合わせる前に状態空間に変換し、伝達関数や零点・極・ゲインの形はモデルを書き表すときとその確認のときにだけ使うよう、説明されている。
 
 ## 読む順番の目安
 
@@ -65,7 +65,7 @@
 | リンク | 用途 | 説明 | 製品・リリース |
 |---|---|---|---|
 | [Control System Toolbox 入門](https://jp.mathworks.com/help/control/getting-started-with-control-system-toolbox.html) | 辞書 | カテゴリのページ。モデル・解析・設計の入門の解説と例題の一覧 | Control System Toolbox |
-| [線形 (LTI) モデル](https://jp.mathworks.com/help/control/getstart/linear-lti-models.html) | チュートリアル | 伝達関数・零点極ゲイン・状態空間・周波数応答データの4種類のモデルの作り方と、相互の変換。数値計算には状態空間が向くという説明もある | Control System Toolbox |
+| [線形 (LTI) モデル](https://jp.mathworks.com/help/control/getstart/linear-lti-models.html) | チュートリアル | 伝達関数・零点極ゲイン・状態空間・周波数応答データの4種類のモデルの作り方と、相互の変換。精度のために、モデルを組み合わせる前に状態空間へ変換するよう勧めている | Control System Toolbox |
 | [動的システム モデル](https://jp.mathworks.com/help/control/dynamic-system-models.html) | 辞書 | カテゴリのページ。モデルの表現・相互接続（直列・並列・フィードバック）・変換・低次元化 | Control System Toolbox |
 | [tf](https://jp.mathworks.com/help/control/ref/tf.html) | 辞書 | 伝達関数のモデルを作る。ほかのモデルを伝達関数に変換する | Control System Toolbox |
 | [ss](https://jp.mathworks.com/help/control/ref/ss.html) | 辞書 | 状態空間のモデルを作る。ほかのモデルを状態空間に変換する | Control System Toolbox |
@@ -89,7 +89,7 @@
 | [ボード線図設計](https://jp.mathworks.com/help/control/ug/bode-diagram-design.html) | チュートリアル | DCモーターに対し、ボード線図のエディターで交差周波数を上げ、積分と位相進みを加えて、ゲイン余裕・位相余裕などの要求を満たす | Control System Toolbox |
 | [PID コントローラーの調整](https://jp.mathworks.com/help/control/pid-controller-design.html) | 辞書 | カテゴリのページ。PID Tuner・`pidtune`による調整、測定データからの調整、2自由度PID、Simulinkでの調整の解説と例題の一覧 | Control System Toolbox |
 | [高速設定値追従用の PID コントローラーの設計](https://jp.mathworks.com/help/control/getstart/pid-controller-design-for-fast-reference-tracking.html) | チュートリアル | 3次のプラントに対し、PID Tunerで立ち上がり時間と整定時間の要求を満たすまで調整する。PIではうまくいかず、微分を加えて満たす流れ | Control System Toolbox |
-| [pidtune](https://jp.mathworks.com/help/control/ref/dynamicsystem.pidtune.html) | 辞書 | プラントのモデルからPID制御器のゲインを自動で調整する | Control System Toolbox |
+| [pidtune](https://jp.mathworks.com/help/control/ref/dynamicsystem.pidtune.html) | 辞書 | プラントのモデルからPID制御器のゲインを自動で調整する | Control System Toolbox、R2010b以降 |
 
 ### ドキュメント（現代制御の設計と状態の推定）
 
@@ -100,7 +100,7 @@
 | [ctrb](https://jp.mathworks.com/help/control/ref/statespacemodel.ctrb.html) | 辞書 | 可制御行列を求める。階数で可制御性を確かめる | Control System Toolbox |
 | [obsv](https://jp.mathworks.com/help/control/ref/statespacemodel.obsv.html) | 辞書 | 可観測行列を求める。階数で可観測性を確かめる | Control System Toolbox |
 | [place](https://jp.mathworks.com/help/control/ref/place.html) | 辞書 | 指定した位置に閉ループの極を置く状態フィードバックのゲインを求める | Control System Toolbox |
-| [lqr](https://jp.mathworks.com/help/control/ref/lti.lqr.html) | 辞書 | 状態と入力の重み（Q・R）による2次の評価関数を最小にする、状態フィードバックのゲインを求める | Control System Toolbox |
+| [lqr](https://jp.mathworks.com/help/control/ref/lti.lqr.html) | 辞書 | 状態と入力の2乗に重み（Q・R）を付けて時間で積分した評価関数を最小にする、状態フィードバックのゲインを求める | Control System Toolbox |
 | [DC モーター制御](https://jp.mathworks.com/help/control/ug/dc-motor-control.html) | サンプル | 例題。同じDCモーターに、フィードフォワード、積分のフィードバック（根軌跡でゲインを選ぶ）、LQRの3つを設計し、目標への追従と負荷の外乱への強さを比べる | Control System Toolbox |
 | [状態の推定](https://jp.mathworks.com/help/control/state-estimation.html) | 辞書 | カテゴリのページ。カルマンフィルターの設計（`kalman`）と、非線形の系のオンラインの状態推定（拡張・アンセンテッドカルマンフィルター等）の関数の一覧 | Control System Toolbox |
 | [kalman](https://jp.mathworks.com/help/control/ref/ss.kalman.html) | 辞書 | 雑音の共分散から、状態を推定するカルマンフィルターを設計する | Control System Toolbox |
@@ -142,7 +142,8 @@
 ## 補足
 
 - このテーマは、線形の制御（Control System Toolbox）を中心に整理した。非線形のプラントを扱う場合の線形化（Simulink Control Design）や、ロバスト制御・モデル予測制御の設計の詳細は、製品のページの紹介にとどめた。
-- 関数のリファレンスのページ（`bode`・`margin`・`rlocus`・`pidtune`・`place`・`lqr`・`kalman`）は、ページを1つずつ開いて確かめたのではなく、公式のカテゴリのページに載っていたリンクのURLで載せた。`tf`・`ss`・`ctrb`・`obsv`は、ページを開いて確かめた。`ctrb`・`obsv`は、`ss.ctrb.html`・`ctrb.html`の形のURLは404で、`statespacemodel.ctrb.html`の形が正しかった。
+- 関数のリファレンスの`ctrb`・`obsv`は、`ss.ctrb.html`・`ctrb.html`の形のURLは404で、`statespacemodel.ctrb.html`の形が正しかった。
+- 講演資料（PDF）の本文は読んでおらず、説明は検索結果に出た資料の題名とURLから書いた。
 - 「State Space」の第5部の動画は、シリーズのページに載っていた題名・長さ・URLで載せた（公開年は確かめていない）。
 - 日本語の動画: 「MATLAB Japan」チャンネルの、このテーマを主題にした動画は、今回は調べていない。
 - 大学等が公開している制御のチュートリアル（MATLABを使うもの）は、READMEの「情報源の範囲」に従い、MathWorksのドメインでないため載せていない。
