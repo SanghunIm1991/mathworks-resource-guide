@@ -51,13 +51,13 @@
 
 ### 内部の状態の扱い方
 
-動的なプラントを置き換えるサロゲートモデルは、プラントの内部の状態（速度・温度・蓄えたエネルギー等）に当たる情報を、時刻をまたいで持ち続ける必要がある。MathWorksの公式のドキュメントでは、その持ち方は方式によって次のように違う。
+動的なプラントを置き換えるサロゲートモデルは、プラントの内部の状態（速度・温度・蓄えたエネルギー等）に当たる情報を、時刻をまたいで持ち続ける必要がある。MathWorksの公式のドキュメントの記述をもとに整理すると、その持ち方は方式によって次のように違う（表には、記述からの解釈も含む）。
 
 | 方式 | 状態をどう持つか | 微分値との関係 | Simulinkでの状態の扱い |
 |---|---|---|---|
-| LSTM（Deep Learning Toolbox） | ネットワークの内部の**セル状態と隠れ状態**として持つ。物理的な意味のある状態ではない | 扱わない。決まった時間の刻みごとに状態を更新する | Stateful Predictブロック（R2021a以降）は予測のたびに状態を更新し、初期状態に戻すにはResettable Subsystemに入れて`Reset`の信号で戻す。LSTM Layerブロック（R2024b以降）は既定で状態を保ち、セル状態と隠れ状態の初期値を設定できる |
+| LSTM（Deep Learning Toolbox） | ネットワークの内部の**セル状態と隠れ状態**として持つ。ドキュメントは、これらを物理量に対応づけていない | 扱わない。予測（ブロックの実行）のたびに状態を更新する | Stateful Predictブロック（R2021a以降）は予測のたびに状態を更新し、初期状態に戻すにはResettable Subsystemに入れて`Reset`の信号で戻す。LSTM Layerブロック（R2024b以降）は既定で状態を保ち、セル状態と隠れ状態の初期値を設定できる |
 | ニューラル状態空間（System Identification Toolbox） | **状態ベクトル x を明示的に持つ**。状態の関数と出力の関数をそれぞれニューラルネットワークで表す | 連続時間のモデルでは、状態の関数が**状態の微分 dx/dt**を出す。離散時間のモデルでは**次の時刻の状態**を出す | Neural State-Space Modelブロック（R2022b以降）。初期状態を設定でき、状態と、その微分（離散時間では差分）を出力できる |
-| Neural ODE（Deep Learning Toolbox） | 状態を明示的に持ち、初期状態から時間を進めて解く | 常微分方程式の右辺（**微分を与える関数**）をネットワークで学習し、`dlode45`で解く。制御入力を加える例題もある（R2026a以降） | 公式の例題はMATLABでの学習と予測まで。ニューラル状態空間は、MathWorksのブログでNeural ODEと関連づけて紹介されている |
+| Neural ODE（Deep Learning Toolbox） | 状態を明示的に持ち、初期状態から時間を進めて解く | 常微分方程式の右辺（**微分を与える関数**）をネットワークで学習し、`dlode45`で解く。制御入力を加える例題もある（R2026a以降） | 今回確かめた公式の例題（下のリンクの表の2件）は、MATLABでの学習と予測を扱う。Simulinkのブロックとして動かす公式の例題は、今回の調査では見つからなかった。ニューラル状態空間モデルは、MathWorksのブログ「Using AI for Reduced-Order Modeling」で、Neural ODEの学習と関連づけて紹介されている。Neural ODEを使った事例には、下の講演資料「1D解析における AIサロゲートモデルの適用」（SUBARU）がある |
 | 非線形ARX（System Identification Toolbox） | 状態を明示的には持たない。**過去の入力と出力の値**（`y(t-1)`・`u(t-2)`等）を回帰の変数にして、状態の代わりにする | 扱わない | Nonlinear ARX Modelブロック |
 
 ニューラル状態空間モデルの学習には、状態の計測値が要る。状態を計測できないときは、出力を状態と見なして（出力＝状態として）学習するよう、公式のドキュメントで説明されている。また、オートエンコーダーで計測値を潜在の状態（`LatentDim`）に写して、状態の次元を変える方法もある。
@@ -123,7 +123,7 @@
 | リンク | 用途 | 説明 | 製品・リリース |
 |---|---|---|---|
 | [Reduced Order Modeler App: 低次元化モデル（ROM）をインタラクティブに構築](https://blogs.mathworks.com/japan-community/2024/11/08/reduced-order-modeler-app-how-to-interactively-create-ai-based-reduced-order-models-roms-jp/) | チュートリアル | 日本語。アプリでタービンブレードのROMを作り、Simulinkへエクスポートする例（MATLAB ユーザーコミュニティー、2024年。英語の記事の翻訳）。当時はベータ版のサポートパッケージで、現在はReduced Order Modeler for MATLABに置き換わっている | Reduced Order Modeler for MATLAB |
-| [Using AI for Reduced-Order Modeling](https://blogs.mathworks.com/deep-learning/2022/12/05/using-ai-for-reduced-order-modeling/) | 概要 | 英語。エンジンのモデルをLSTMとニューラル状態空間モデルで置き換えて比べ、精度はLSTMがわずかに上、ほかの観点はニューラル状態空間が上とした（この例に限った定性的な比較。2022年） | Deep Learning Toolbox、System Identification Toolbox |
+| [Using AI for Reduced-Order Modeling](https://blogs.mathworks.com/deep-learning/2022/12/05/using-ai-for-reduced-order-modeling/) | 概要 | 英語。エンジンのモデルをLSTMとニューラル状態空間モデルで置き換えて比べた例（2022年）。結果の要点は上の「内部の状態の扱い方」に書いた | Deep Learning Toolbox、System Identification Toolbox |
 | [Deep Learning Based Surrogate Models](https://blogs.mathworks.com/deep-learning/2021/05/21/deep-learning-based-surrogate-models/) | サンプル | 英語。永久磁石同期モーターの電気・熱の挙動をLSTMのサロゲートで置き換え、Simulinkへ書き出す例（2021年） | Deep Learning Toolbox |
 
 ### 講演資料（PDF）
