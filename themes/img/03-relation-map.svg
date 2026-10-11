@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1210 1094" width="1210" height="1094" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
+<rect x="0" y="0" width="1210" height="1094" fill="#ffffff"/>
+<rect x="192" y="96" width="246" height="954" fill="#eff6ff"/>
+<rect x="192" y="52" width="246" height="36" rx="6" fill="#1d4ed8"/>
+<rect x="442" y="96" width="246" height="954" fill="#f0fdf4"/>
+<rect x="442" y="52" width="246" height="36" rx="6" fill="#15803d"/>
+<rect x="692" y="96" width="246" height="954" fill="#fffbeb"/>
+<rect x="692" y="52" width="246" height="36" rx="6" fill="#b45309"/>
+<rect x="942" y="96" width="246" height="954" fill="#f5f3ff"/>
+<rect x="942" y="52" width="246" height="36" rx="6" fill="#6d28d9"/>
+<line x1="210" y1="34" x2="910" y2="34" stroke="#374151" stroke-width="2"/>
+<polygon points="920,34 908,28 908,40" fill="#374151"/>
+<line x1="20" y1="96" x2="1190" y2="96" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="97" width="166" height="344" fill="#f3f4f6"/>
+<line x1="20" y1="442" x2="1190" y2="442" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="443" width="166" height="76" fill="#f3f4f6"/>
+<line x1="20" y1="520" x2="1190" y2="520" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="521" width="166" height="158" fill="#f3f4f6"/>
+<line x1="20" y1="680" x2="1190" y2="680" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="681" width="166" height="176" fill="#f3f4f6"/>
+<line x1="20" y1="858" x2="1190" y2="858" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="859" width="166" height="78" fill="#f3f4f6"/>
+<line x1="20" y1="938" x2="1190" y2="938" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="939" width="166" height="110" fill="#f3f4f6"/>
+<line x1="20" y1="1050" x2="1190" y2="1050" stroke="#9ca3af" stroke-width="1"/>
+<rect x="200" y="106" width="230" height="26" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="140" width="230" height="42" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="190" width="230" height="42" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="240" width="230" height="42" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="290" width="230" height="26" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="324" width="230" height="42" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="374" width="230" height="58" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="950" y="106" width="230" height="26" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="950" y="140" width="230" height="42" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="200" y="452" width="230" height="42" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="450" y="452" width="230" height="58" rx="5" fill="#ffffff" stroke="#15803d" stroke-width="1.2"/>
+<rect x="700" y="452" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="950" y="452" width="230" height="26" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="700" y="530" width="230" height="74" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="612" width="230" height="58" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="950" y="530" width="230" height="26" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="950" y="564" width="230" height="26" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="700" y="690" width="230" height="58" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="756" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="806" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="450" y="868" width="230" height="42" rx="5" fill="#ffffff" stroke="#15803d" stroke-width="1.2"/>
+<rect x="700" y="868" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="950" y="868" width="230" height="26" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="950" y="902" width="230" height="26" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="700" y="948" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="998" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="315.0" y="75.0" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">概要</text>
+<text x="565.0" y="75.0" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">チュートリアル</text>
+<text x="815.0" y="75.0" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">サンプル</text>
+<text x="1065.0" y="75.0" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">辞書</text>
+<text x="565.0" y="24.0" font-size="12" fill="#374151" text-anchor="middle" font-weight="normal">学ぶ順番</text>
+<text x="1065.0" y="38.0" font-size="12" fill="#374151" text-anchor="middle" font-weight="normal">必要なときに引く</text>
+<text x="105.0" y="75.0" font-size="14" fill="#111827" text-anchor="middle" font-weight="bold">入門の項目</text>
+<text x="32.0" y="120.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【1】ROMとは（全体</text>
+<text x="32.0" y="138.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">像）</text>
+<text x="32.0" y="466.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【2】アプリで一通り作</text>
+<text x="32.0" y="484.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">る</text>
+<text x="32.0" y="544.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【3】システム同定の方</text>
+<text x="32.0" y="562.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">法</text>
+<text x="32.0" y="704.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【4】深層学習（LSTM</text>
+<text x="32.0" y="722.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">等）で作る</text>
+<text x="32.0" y="882.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【5】Simulinkへの組</text>
+<text x="32.0" y="900.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">み込み</text>
+<text x="32.0" y="962.0" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【6】事例</text>
+<text x="207.0" y="123.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">低次元化モデリングとは</text>
+<text x="207.0" y="157.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Reduced Order Modeling</text>
+<text x="207.0" y="173.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Overview</text>
+<text x="207.0" y="207.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔製品〕低次元化モデリング（製品のペ</text>
+<text x="207.0" y="223.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">ージ）</text>
+<text x="207.0" y="257.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔製品〕AI を活用したモデルベースデ</text>
+<text x="207.0" y="273.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">ザイン</text>
+<text x="207.0" y="307.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔PDF〕データ駆動モデリングと制御</text>
+<text x="207.0" y="341.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕モデルベース開発の新時代へ</text>
+<text x="207.0" y="357.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">- AI 活用が切り開く新境地と効率化</text>
+<text x="207.0" y="391.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕AI with Model-Based</text>
+<text x="207.0" y="407.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Design: Reduced Order</text>
+<text x="207.0" y="423.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Modeling</text>
+<text x="957.0" y="123.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">低次元化モデリング（Simulink）</text>
+<text x="957.0" y="157.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">低次元化モデリング（Deep</text>
+<text x="957.0" y="173.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Learning Toolbox）</text>
+<text x="207.0" y="469.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕What Is the Reduced</text>
+<text x="207.0" y="485.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Order Modeler App?</text>
+<text x="457.0" y="469.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔ブログ〕Reduced Order</text>
+<text x="457.0" y="485.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Modeler App: 低次元化モデル（</text>
+<text x="457.0" y="501.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">ROM）をインタラクティブに構築</text>
+<text x="707.0" y="469.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Reduced Order Model of a Jet</text>
+<text x="707.0" y="485.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Engine Turbine Blade</text>
+<text x="957.0" y="469.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Reduced Order Modeler</text>
+<text x="707.0" y="547.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Reduced Order Modeling of</text>
+<text x="707.0" y="563.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Electric Vehicle Battery</text>
+<text x="707.0" y="579.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">System Using Neural</text>
+<text x="707.0" y="595.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">State-Space Model</text>
+<text x="707.0" y="629.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Surrogate Modeling Using</text>
+<text x="707.0" y="645.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Gaussian Process-Based NLARX</text>
+<text x="707.0" y="661.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Model</text>
+<text x="957.0" y="547.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">ニューラル状態空間モデル</text>
+<text x="957.0" y="581.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">idNeuralStateSpace</text>
+<text x="707.0" y="707.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulink における LSTM ネットワ</text>
+<text x="707.0" y="723.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">ークを使用した物理システムのモデリン</text>
+<text x="707.0" y="739.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">グ</text>
+<text x="707.0" y="773.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔ブログ〕Deep Learning Based</text>
+<text x="707.0" y="789.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Surrogate Models</text>
+<text x="707.0" y="823.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔PDF〕BMS（バッテリーマネジメント</text>
+<text x="707.0" y="839.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">システム）の先進アルゴリズム開発</text>
+<text x="457.0" y="885.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕AI・学習モデルのSimulink</text>
+<text x="457.0" y="901.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">実装とコード自動生成</text>
+<text x="707.0" y="885.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulink でのネットワークの状態の</text>
+<text x="707.0" y="901.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">予測と更新</text>
+<text x="957.0" y="885.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulink を使用した深層学習</text>
+<text x="957.0" y="919.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">exportNetworkToSimulink</text>
+<text x="707.0" y="965.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔PDF〕1D解析における AIサロゲート</text>
+<text x="707.0" y="981.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">モデルの適用</text>
+<text x="707.0" y="1015.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕1D解析におけるAIサロゲート</text>
+<text x="707.0" y="1031.0" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">モデルの適用</text>
+<text x="20.0" y="1080.0" font-size="11" fill="#4b5563" text-anchor="start" font-weight="normal">図の中の題名はリンクではない。開くときはテーマのファイルの「リンク」の表から開く。</text>
+</svg>
