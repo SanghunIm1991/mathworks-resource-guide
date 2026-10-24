@@ -173,7 +173,7 @@ flowchart LR
 | `NumInputs` | 0 | 入力の数。0なら入力の無い（自律の）システム |
 | `NumOutputs` | 状態の数 | 出力の数。先頭の「状態の数」個が状態の計測値 |
 | `Ts` | 0 | サンプル時間。0なら連続時間、正の値なら離散時間 |
-| `HasFeedthrough` | `false` | 出力 `y2` が、同じ時刻の入力 `u` に直接よるか（直達項。線形の場合の `D u` に当たる） |
+| `HasFeedthrough` | `false` | 出力 `y2` が、同じ時刻の入力 `u` に直接よるか（直達項。線形の場合の `D u` に当たる、というのは著者の対応づけ） |
 | `IsTimeInvariant` | `true` | `F`・`H` が時刻 `t` そのものによらないか。`false` にすると時刻もネットワークの入力になる |
 | `LatentDim` | `NaN`（使わない） | 正の整数にすると、4-4節のオートエンコーダーを加える |
 
@@ -199,14 +199,14 @@ flowchart LR
 ニューラル状態空間モデルの学習は、次のように考えると分かりやすい（ここは、学習の設定の項目の名前とドキュメントの説明から、この解説の著者が整理したものである）。
 
 1. 学習のデータを、ある長さの区間（**ウィンドウ**。設定 `WindowSize`、既定は自動）に分ける。
-2. 各区間の始まりの状態の計測値から出発し、状態のネットワークで時間を進めて、状態の軌跡を予測する。連続時間のモデルでは、ネットワークが出す微分をODEソルバー（設定 `ODESolverOptions`）で積分する。区間の途中の入力は、記録した時点の間を直線で補う（設定 `InputInterSample`、既定は一次ホールド `'foh'`）。
+2. 各区間の始まりの状態の計測値から出発し、状態のネットワークで時間を進めて、状態の軌跡を予測する。連続時間のモデルでは、ネットワークが出す微分をODEソルバー（設定 `ODESolverOptions`）で積分する。区間の途中の入力の扱いは設定 `InputInterSample` で決まり、既定は `'foh'`（一次ホールド）である。設定のページは `'foh'` の意味を説明していないが、一次ホールドは一般に、記録した時点の間を直線で補う方法を指す。
 3. 予測した軌跡と、計測した状態・出力のずれ（損失）を計算し、3-2節の方法でパラメーターを直す。
 
 1時点先だけを当てるのではなく、軌跡全体を合わせるように学習するので、学習したモデルを長い時間シミュレーションしても、ずれが積み重なりにくくなることが期待できる。この考え方は、リファレンスのページが参考文献に挙げている **Neural ODE**（常微分方程式の右辺をニューラルネットワークで表す手法。テーマ03の「内部の状態の扱い方」を参照）と同じ系統である。
 
 ### 5-2. データの集め方
 
-データは `nlssest` に、時刻つきの表（`timetable`）か、System Identification Toolboxの入出力データのオブジェクト `iddata` で渡す。複数の実験は、実験ごとの表をセル配列（型の違う値や大きさの違う値を並べて入れられるMATLABの配列）にまとめて渡す（すべての実験で時刻の並びをそろえる）。
+データは `nlssest` に、時刻つきの表（`timetable`）か、System Identification Toolboxの入出力データのオブジェクト `iddata` で渡す。複数の実験は、実験ごとの表をセル配列（型の違う値や大きさの違う値を並べて入れられるMATLABの配列）にまとめて渡す（すべての実験で時刻の並びをそろえる。ただし、5-3節の設定で検証に回す最後の実験だけは、長さが違ってよい）。
 
 1つの長い実験より、**始まりの状態と入力を変えた短い実験をたくさん**集めるのが、公式の例題の方針である。そうすると、状態の空間のいろいろな場所で「状態の変わり方」を学べるから、と考えられる（この理由づけは著者の解釈）。テーマ03の「はじめに」のとおり、学習に使った範囲の外では精度の保証が無いので、使う場面で通りうる状態と入力の範囲を覆うように実験を計画する。
 
@@ -216,7 +216,7 @@ flowchart LR
 
 ## 6. MATLABでの手順（単振り子の例題）
 
-公式の例題「[Neural State-Space Model of Simple Pendulum System](https://jp.mathworks.com/help/ident/ug/training-a-neural-state-space-model-for-a-simple-pendulum-system.html)」（英語）に沿って、手順の要点を説明する。例題のデータ `pendulumdata` は例題に付属するので、例題のページから例題を開いた状態で実行する。
+公式の例題「[Neural State-Space Model of Simple Pendulum System](https://jp.mathworks.com/help/ident/ug/training-a-neural-state-space-model-for-a-simple-pendulum-system.html)」（英語）に沿って、手順の要点を説明する。例題では、データを `load pendulumdata` で読み込む。データの入手のしかたは例題のページに書かれていないので、例題のページから例題を開いて、データのファイルがあることを確かめてから実行する。
 
 ### 6-1. 対象のシステムとデータ
 
@@ -254,7 +254,7 @@ sys.OutputNetwork(2) = createMLPNetwork(sys, "output", ...
     WeightsInitializer="glorot", BiasInitializer="zeros");
 ```
 
-`OutputNetwork(1)` は4-1節の「状態をそのまま出す」固定の写像なので、設定するのは2つ目だけである。`WeightsInitializer`・`BiasInitializer` は、学習を始める前の重みとバイアスの決め方（glorotは層の大きさに応じた幅の乱数、zerosは0）である。
+例題のコードは出力の数を `NumOutput=4` と書いているが、ここではリファレンスの名前（`NumOutputs`）に合わせた。`OutputNetwork(1)` は4-1節の「状態をそのまま出す」固定の写像なので、設定するのは2つ目だけである。`WeightsInitializer`・`BiasInitializer` は、学習を始める前の重みとバイアスの決め方（glorotは層の大きさに応じた幅の乱数、zerosは0）である。
 
 **期待する結果**
 
@@ -306,12 +306,12 @@ sys = nlssest(U, Y, sys, options, UseLastExperimentForValidation=true);
 | ある時点の値を見る | `evaluate(sys, x0, u0)` | 状態 `x0`・入力 `u0` のときの、状態の微分（離散時間なら次の状態）と出力を返す |
 | シミュレーション | `sim` | 入力の時系列と初期状態から、出力の時系列を計算する |
 | 線形化 | `linearize(sys, x0, u0)` | 動作点（線形化の基準にする状態と入力の組） `(x0, u0)` のまわりの線形モデル（2-3節の `A`・`B`・`C`・`D`）を作る。テーマ04の制御設計の手法に渡せる |
-| MATLAB関数に書き出す | `generateMATLABFunction(sys, "myStateFcn", "myOutputFcn")` | 状態の関数と出力の関数を、Toolboxの無い環境でも動く素のMATLABの関数にする。例題では、生成した関数の値と `evaluate` の値の差が0と表示され、一致することを確かめている |
+| MATLAB関数に書き出す | `generateMATLABFunction(sys, "myStateFcn", "myOutputFcn")` | 状態の関数と出力の関数、およびそれらのヤコビ行列（7-2節の偏微分を並べた行列）を計算するMATLABの関数を作る。例題は、生成した関数をシミュレーションやC/C++のコード生成に使えるとしている。例題では、生成した関数の値と `evaluate` の値の差が0と表示され、一致することを確かめている |
 | Simulinkで使う | Neural State-Space Modelブロック | 学習したモデルをブロックとして動かす。初期状態を設定でき、状態とその微分（離散時間では差分）を出力できる（テーマ03のリンクの表を参照） |
 
 ### 7-2. 線形化の意味
 
-`linearize` は、非線形の `F` と `H` を、動作点のまわりで直線（平面）で近似する。線形化したモデルの `x`・`u`・`y` は、動作点からの**ずれ**（`x - x0` 等）を表す。行列は、`F` と `H` をそれぞれ状態と入力で偏微分したもので、どれも動作点での値をとる。
+`linearize` は、非線形の `F` と `H` を、動作点のまわりで直線（平面）で近似し、線形の状態空間モデル（Control System Toolboxがあれば `ss`、無ければ `idss` のオブジェクト）を返す。`linearize` のページは、行列の求め方を説明せず、Simulink Control Designの線形化の説明を参照するよう案内している。この節の以下の説明は、制御工学の一般的な線形化の理論による。線形化したモデルの `x`・`u`・`y` は、動作点からの**ずれ**（`x - x0` 等）を表す。行列は、`F` と `H` をそれぞれ状態と入力で偏微分したもので、どれも動作点での値をとる。
 
 $$
 A = \left.\frac{\partial F}{\partial x}\right|_{(x_0,\,u_0)}, \qquad
@@ -323,7 +323,7 @@ C = \left.\frac{\partial H}{\partial x}\right|_{(x_0,\,u_0)}, \qquad
 D = \left.\frac{\partial H}{\partial u}\right|_{(x_0,\,u_0)}
 $$
 
-偏微分は「ほかの変数を止めて、1つの変数だけを少し動かしたときの変わり方」である。ここでの `H` は出力全体（`y1` と `y2`）を出す関数と考える。`y1 = x` の部分は、`C` では単位行列（対角が1で、ほかが0の行列）、`D` では0になる。線形化したモデルが元のモデルに近いのは、動作点の近くだけである。例題では、線形化したモデルと非線形のモデルのステップ応答（入力を急に一定の値にしたときの応答）を比べている。
+偏微分は「ほかの変数を止めて、1つの変数だけを少し動かしたときの変わり方」である。ここでの `H` は出力全体（`y1` と `y2`）を出す関数と考える。`y1 = x` の部分は、`C` では単位行列（対角が1で、ほかが0の行列）、`D` では0になる（`C` の単位行列は、`linearize` のページにも書かれている）。線形化したモデルが元のモデルに近いのは、動作点の近くだけである。例題では、線形化したモデルと非線形のモデルのステップ応答（入力を急に一定の値にしたときの応答）を比べている。
 
 ## 8. 確かめの問い
 
@@ -355,10 +355,12 @@ $$
 
 ## 出典
 
-この解説は、次のMathWorksの公式のドキュメント（いずれも英語、2026-10-25に確認、R2026b）を読み、自分の言葉で説明し直したものである。文章の逐語の転載ではない。コードは、例題の手順の要点をこの解説の説明に合わせて書き直したものである。
+この解説は、次のMathWorksの公式のドキュメント（いずれも英語、2026-10-25に確認、R2026b。7-2節の偏微分の式は、公式のドキュメントではなく制御工学の一般的な理論による）を読み、自分の言葉で説明し直したものである。文章の逐語の転載ではない。コードは、例題の手順の要点をこの解説の説明に合わせて書き直したものである。
 
 - [What Are Neural State-Space Models?](https://jp.mathworks.com/help/ident/ug/what-are-neural-state-space-models.html) — モデルの式、状態を測れないときの扱い、MLPと万能近似、オートエンコーダー
 - [idNeuralStateSpace](https://jp.mathworks.com/help/ident/ref/idneuralstatespace.html) — 作り方の設定と既定値、ネットワークの既定の形、変更の履歴（R2022b導入、R2025aの変更）
 - [nlssest](https://jp.mathworks.com/help/ident/ref/nlssest.html) — 学習のデータの形、検証の設定、`params` の出力（R2026a以降）
 - [nssTrainingOptions](https://jp.mathworks.com/help/ident/ref/nsstrainingoptions.html) — 最適化の手法と、学習の設定の項目・既定値
 - [Neural State-Space Model of Simple Pendulum System](https://jp.mathworks.com/help/ident/ug/training-a-neural-state-space-model-for-a-simple-pendulum-system.html) — 6節・7節の例題
+- [idNeuralStateSpace/linearize](https://jp.mathworks.com/help/ident/ref/idneuralstatespace.idneuralstatespacelinearize.html) — 線形化の書き方、返すオブジェクト、`C` の単位行列（R2022b導入）
+- [Neural State-Space Model](https://jp.mathworks.com/help/ident/ref/neuralstatespacemodel.html) — Simulinkのブロックの初期状態と出力（R2022b導入）
