@@ -21,6 +21,7 @@ MathWorksの新しい機能には、ドキュメントが英語しかないも�
 
 | No. | 解説 | 関連するテーマ | 前提（先に読むもの） | ファイル | 確認日 |
 |---|---|---|---|---|---|
+| 02a | カバレッジの考え方（判定・条件・MC/DC） | 02 | テーマ02の「はじめに」 | [guides/02a-coverage-criteria.md](guides/02a-coverage-criteria.md) | 2026-10-25 |
 | 03a | ニューラル状態空間モデルのしくみと使い方 | 03 | テーマ03の「はじめに」 | [guides/03a-neural-state-space-model.md](guides/03a-neural-state-space-model.md) | 2026-10-25 |
 | 03b | Reduced Order Modelerアプリで低次元化モデルを作る | 03 | テーマ03の「はじめに」。5節で作るニューラル状態空間モデルの中身は03a（任意） | [guides/03b-reduced-order-modeler-app.md](guides/03b-reduced-order-modeler-app.md) | 2026-10-25 |
 | 04a | 現代制御の数学（固有値・可制御性・極配置・LQR・オブザーバー） | 04 | テーマ04の「はじめに」。03aの7-2節（線形化）は任意 | [guides/04a-modern-control-math.md](guides/04a-modern-control-math.md) | 2026-10-25 |
