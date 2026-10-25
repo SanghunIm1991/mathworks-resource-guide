@@ -15,25 +15,25 @@
 <polygon points="242.8,154.0 264.8,168.0 242.8,182.0" fill="#1d4ed8"/>
 <rect x="270.8" y="78.0" width="196.8" height="180.0" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
 <rect x="337.2" y="95.0" width="64.0" height="42.0" rx="4" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4 3"/>
-<line x1="349.20000000000005" y1="106" x2="369.20000000000005" y2="98" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="349.20000000000005" y1="106" x2="369.20000000000005" y2="116" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="349.20000000000005" y1="106" x2="369.20000000000005" y2="134" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="349.20000000000005" y1="126" x2="369.20000000000005" y2="98" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="349.20000000000005" y1="126" x2="369.20000000000005" y2="116" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="349.20000000000005" y1="126" x2="369.20000000000005" y2="134" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="369.20000000000005" y1="98" x2="389.20000000000005" y2="106" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="369.20000000000005" y1="98" x2="389.20000000000005" y2="126" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="369.20000000000005" y1="116" x2="389.20000000000005" y2="106" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="369.20000000000005" y1="116" x2="389.20000000000005" y2="126" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="369.20000000000005" y1="134" x2="389.20000000000005" y2="106" stroke="#1d4ed8" stroke-width="1.2"/>
-<line x1="369.20000000000005" y1="134" x2="389.20000000000005" y2="126" stroke="#1d4ed8" stroke-width="1.2"/>
-<circle cx="349.20000000000005" cy="106" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
-<circle cx="349.20000000000005" cy="126" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
-<circle cx="369.20000000000005" cy="98" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
-<circle cx="369.20000000000005" cy="116" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
-<circle cx="369.20000000000005" cy="134" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
-<circle cx="389.20000000000005" cy="106" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
-<circle cx="389.20000000000005" cy="126" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+<line x1="349.2" y1="106" x2="369.2" y2="98" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="349.2" y1="106" x2="369.2" y2="116" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="349.2" y1="106" x2="369.2" y2="134" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="349.2" y1="126" x2="369.2" y2="98" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="349.2" y1="126" x2="369.2" y2="116" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="349.2" y1="126" x2="369.2" y2="134" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="369.2" y1="98" x2="389.2" y2="106" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="369.2" y1="98" x2="389.2" y2="126" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="369.2" y1="116" x2="389.2" y2="106" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="369.2" y1="116" x2="389.2" y2="126" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="369.2" y1="134" x2="389.2" y2="106" stroke="#1d4ed8" stroke-width="1.2"/>
+<line x1="369.2" y1="134" x2="389.2" y2="126" stroke="#1d4ed8" stroke-width="1.2"/>
+<circle cx="349.2" cy="106" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+<circle cx="349.2" cy="126" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+<circle cx="369.2" cy="98" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+<circle cx="369.2" cy="116" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+<circle cx="369.2" cy="134" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+<circle cx="389.2" cy="106" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+<circle cx="389.2" cy="126" r="4.5" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
 <text x="369.2" y="170.0" font-size="18" font-weight="bold" fill="#1d4ed8" text-anchor="middle">【2】構造を決める</text>
 <text x="369.2" y="221.0" font-size="16" font-weight="normal" fill="#111827" text-anchor="middle">idNeuralStateSpace</text>
 <polygon points="473.6,154.0 495.6,168.0 473.6,182.0" fill="#1d4ed8"/>
@@ -48,14 +48,14 @@
 <text x="600.0" y="232.0" font-size="16" font-weight="normal" fill="#111827" text-anchor="middle">軌跡を比べる</text>
 <polygon points="704.4,154.0 726.4,168.0 704.4,182.0" fill="#1d4ed8"/>
 <rect x="732.4" y="78.0" width="196.8" height="180.0" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
-<circle cx="830.8000000000001" cy="116" r="16" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
-<path d="M822.8000000000001,116 L828.8000000000001,123 L839.8000000000001,109" fill="none" stroke="#1d4ed8" stroke-width="3"/>
+<circle cx="830.8" cy="116" r="16" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M822.8,116 L828.8,123 L839.8,109" fill="none" stroke="#1d4ed8" stroke-width="3"/>
 <text x="830.8" y="170.0" font-size="18" font-weight="bold" fill="#1d4ed8" text-anchor="middle">【4】検証</text>
 <text x="830.8" y="221.0" font-size="16" font-weight="normal" fill="#111827" text-anchor="middle">学習に使わない実験</text>
 <polygon points="935.2,154.0 957.2,168.0 935.2,182.0" fill="#1d4ed8"/>
 <rect x="963.2" y="78.0" width="196.8" height="180.0" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
-<circle cx="1061.6000000000001" cy="116" r="16" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
-<polygon points="1056.6000000000001,107 1071.6000000000001,116 1056.6000000000001,125" fill="#1d4ed8"/>
+<circle cx="1061.6" cy="116" r="16" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+<polygon points="1056.6,107 1071.6,116 1056.6,125" fill="#1d4ed8"/>
 <text x="1061.6" y="170.0" font-size="18" font-weight="bold" fill="#1d4ed8" text-anchor="middle">【5】使う</text>
 <text x="1061.6" y="199.0" font-size="16" font-weight="normal" fill="#111827" text-anchor="middle">sim・linearize</text>
 <text x="1061.6" y="221.0" font-size="16" font-weight="normal" fill="#111827" text-anchor="middle">関数の生成</text>
