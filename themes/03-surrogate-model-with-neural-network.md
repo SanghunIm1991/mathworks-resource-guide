@@ -3,7 +3,7 @@
 - 確認日: 2026-10-11
 - 調査時点の最新リリース: R2026b
 - 日本語版のページの表示: 確認していない（日本語版は英語版より更新が遅れることがあり、各ページに英語版へのリンクがある）
-- 詳細解説: [03a ニューラル状態空間モデルのしくみと使い方](../guides/03a-neural-state-space-model.md)
+- 詳細解説: [03a ニューラル状態空間モデルのしくみと使い方](../guides/03a-neural-state-space-model.md)、[03b Reduced Order Modelerアプリで低次元化モデルを作る](../guides/03b-reduced-order-modeler-app.md)
 
 ## 概要
 
