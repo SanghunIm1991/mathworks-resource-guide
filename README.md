@@ -22,6 +22,7 @@ MathWorksの新しい機能には、ドキュメントが英語しかないも�
 | No. | 解説 | 関連するテーマ | ファイル | 確認日 |
 |---|---|---|---|---|
 | 03a | ニューラル状態空間モデルのしくみと使い方 | 03 | [guides/03a-neural-state-space-model.md](guides/03a-neural-state-space-model.md) | 2026-10-25 |
+| 04a | 現代制御の数学（固有値・可制御性・極配置・LQR・オブザーバー） | 04 | [guides/04a-modern-control-math.md](guides/04a-modern-control-math.md) | 2026-10-25 |
 
 ### 1冊の解説の書式
 
