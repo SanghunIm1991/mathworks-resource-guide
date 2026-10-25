@@ -19,11 +19,13 @@ MathWorks社とは無関係の非公式のリンク集である。MATLAB・Simul
 
 MathWorksの新しい機能には、ドキュメントが英語しかないものや、読むのに理数工の前提知識（微分方程式・線形代数・機械学習等）が要るものがある。そうした機能について、前提知識から順に説明する解説を`guides/`に置く。リンク集が「どこを読めばよいか」を示すのに対し、解説は「読んで分かるための中身」を、先頭から順に読む教科書として書く。
 
-| No. | 解説 | 関連するテーマ | ファイル | 確認日 |
-|---|---|---|---|---|
-| 03a | ニューラル状態空間モデルのしくみと使い方 | 03 | [guides/03a-neural-state-space-model.md](guides/03a-neural-state-space-model.md) | 2026-10-25 |
-| 03b | Reduced Order Modelerアプリで低次元化モデルを作る | 03 | [guides/03b-reduced-order-modeler-app.md](guides/03b-reduced-order-modeler-app.md) | 2026-10-25 |
-| 04a | 現代制御の数学（固有値・可制御性・極配置・LQR・オブザーバー） | 04 | [guides/04a-modern-control-math.md](guides/04a-modern-control-math.md) | 2026-10-25 |
+| No. | 解説 | 関連するテーマ | 前提（先に読むもの） | ファイル | 確認日 |
+|---|---|---|---|---|---|
+| 03a | ニューラル状態空間モデルのしくみと使い方 | 03 | テーマ03の「はじめに」 | [guides/03a-neural-state-space-model.md](guides/03a-neural-state-space-model.md) | 2026-10-25 |
+| 03b | Reduced Order Modelerアプリで低次元化モデルを作る | 03 | テーマ03の「はじめに」。ニューラルネットワークの学習の基本は03aの3節 | [guides/03b-reduced-order-modeler-app.md](guides/03b-reduced-order-modeler-app.md) | 2026-10-25 |
+| 04a | 現代制御の数学（固有値・可制御性・極配置・LQR・オブザーバー） | 04 | テーマ04の「はじめに」。03aの7-2節（線形化）は任意 | [guides/04a-modern-control-math.md](guides/04a-modern-control-math.md) | 2026-10-25 |
+
+「前提」の列は、各解説の「想定環境・前提・所要の目安」の表の「前提の文書」と同じものである。テーマのリンク集の「はじめに」だけを前提にする解説は、どれから読んでもよい。
 
 ### 1冊の解説の書式
 
