@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 848" width="1200" height="848" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif" role="img" aria-label="Reduced Order Modelerで重いモデルを軽いROMにする流れの概念図。中央は対比で、同じ入力を、左の重い元のモデル（FEM・CFD等。1回の計算が遅い）と右の軽いROMの両方に入れると、出力の波形がほぼ重なる。その下に左から右へ5段階の道のり。1 入出力を選ぶ（Select ROM I/Os）、2 実験を設定する（信号・範囲・境界）、3 シミュレーション（Run Simulations）、4 学習して比べる（LSTM・NSS等・TestMSE）、5 書き出す（Simulinkのブロック・正規化）。最下部の土台の帯は、アドオン（R2025b以降）・Simulink・静的なROMと動的なROM。">
+<title id="g03b-title">Reduced Order Modelerで重いモデルを軽いROMにする流れの概念図。中央は対比で、同じ入力を、左の重い元のモデル（FEM・CFD等。1回の計算が遅い）と右の軽いROMの両方に入れると、出力の波形がほぼ重なる。その下に左から右へ5段階の道のり。1 入出力を選ぶ（Select ROM I/Os）、2 実験を設定する（信号・範囲・境界）、3 シミュレーション（Run Simulations）、4 学習して比べる（LSTM・NSS等・TestMSE）、5 書き出す（Simulinkのブロック・正規化）。最下部の土台の帯は、アドオン（R2025b以降）・Simulink・静的なROMと動的なROM。</title>
+<defs><marker id="g03b-arrow-1d4ed8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L10,5L0,10Z" fill="#1d4ed8"/></marker><marker id="g03b-arrow-374151" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L10,5L0,10Z" fill="#374151"/></marker><marker id="g03b-arrow-c2410c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0L10,5L0,10Z" fill="#c2410c"/></marker></defs>
+<rect x="0" y="0" width="1200" height="848" fill="#ffffff"/>
+<text x="600.0" y="48.0" font-size="28" fill="#111827" text-anchor="middle" font-weight="bold">Reduced Order Modelerで重いモデルを軽いROMに</text>
+<rect x="470.0" y="78.0" width="260.0" height="104.0" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+<text x="600.0" y="106.0" font-size="18" fill="#1d4ed8" text-anchor="middle" font-weight="bold">同じ入力</text>
+<polyline points="500.0,154.2 525.0,154.2 525.0,131.2 550.0,131.2 550.0,145.0 575.0,145.0 575.0,124.3 600.0,124.3 600.0,161.1 625.0,161.1 625.0,138.1 650.0,138.1 650.0,149.6 675.0,149.6 675.0,128.9 700.0,128.9" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="470.0,130.0 240.0,130.0 240.0,202.0" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-linejoin="round" marker-end="url(#g03b-arrow-1d4ed8)"/>
+<polyline points="730.0,130.0 1010.0,130.0 1010.0,222.0" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-linejoin="round" marker-end="url(#g03b-arrow-1d4ed8)"/>
+<rect x="40.0" y="206.0" width="400.0" height="168.0" rx="10" fill="#e5e7eb" stroke="#374151" stroke-width="4"/>
+<rect x="62.0" y="240.0" width="110.0" height="100.0" rx="2" fill="#ffffff" stroke="#374151" stroke-width="2"/>
+<path d="M80.3,240.0V340.0M62.0,256.7H172.0M98.7,240.0V340.0M62.0,273.3H172.0M117.0,240.0V340.0M62.0,290.0H172.0M135.3,240.0V340.0M62.0,306.7H172.0M153.7,240.0V340.0M62.0,323.3H172.0M62.0,256.7L80.3,240.0M62.0,273.3L80.3,256.7M62.0,290.0L80.3,273.3M62.0,306.7L80.3,290.0M62.0,323.3L80.3,306.7M62.0,340.0L80.3,323.3M80.3,256.7L98.7,240.0M80.3,273.3L98.7,256.7M80.3,290.0L98.7,273.3M80.3,306.7L98.7,290.0M80.3,323.3L98.7,306.7M80.3,340.0L98.7,323.3M98.7,256.7L117.0,240.0M98.7,273.3L117.0,256.7M98.7,290.0L117.0,273.3M98.7,306.7L117.0,290.0M98.7,323.3L117.0,306.7M98.7,340.0L117.0,323.3M117.0,256.7L135.3,240.0M117.0,273.3L135.3,256.7M117.0,290.0L135.3,273.3M117.0,306.7L135.3,290.0M117.0,323.3L135.3,306.7M117.0,340.0L135.3,323.3M135.3,256.7L153.7,240.0M135.3,273.3L153.7,256.7M135.3,290.0L153.7,273.3M135.3,306.7L153.7,290.0M135.3,323.3L153.7,306.7M135.3,340.0L153.7,323.3M153.7,256.7L172.0,240.0M153.7,273.3L172.0,256.7M153.7,290.0L172.0,273.3M153.7,306.7L172.0,290.0M153.7,323.3L172.0,306.7M153.7,340.0L172.0,323.3" fill="none" stroke="#374151" stroke-width="1"/>
+<text x="198.0" y="262.0" font-size="24" fill="#111827" text-anchor="start" font-weight="bold">重い元のモデル</text>
+<text x="198.0" y="298.0" font-size="18" fill="#374151" text-anchor="start">FEM・CFD等</text>
+<path d="M198,317H222L210,334L222,351H198L210,334Z" fill="#ffffff" stroke="#374151" stroke-width="2" stroke-linejoin="round"/>
+<path d="M203,348H217L210,339Z" fill="#374151"/>
+<text x="234.0" y="341.0" font-size="18" fill="#374151" text-anchor="start">1回の計算が遅い</text>
+<rect x="860.0" y="226.0" width="300.0" height="128.0" rx="10" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+<circle cx="924" cy="290.0" r="34" fill="#ffffff" stroke="#c2410c" stroke-width="2"/>
+<polygon points="930.0,266.0 912.0,294.0 924.0,294.0 918.0,314.0 936.0,286.0 924.0,286.0" fill="#c2410c"/>
+<text x="980.0" y="300.0" font-size="28" fill="#c2410c" text-anchor="start" font-weight="bold">軽いROM</text>
+<polyline points="240.0,374.0 240.0,464.0 446.0,464.0" fill="none" stroke="#374151" stroke-width="3" stroke-linejoin="round" marker-end="url(#g03b-arrow-374151)"/>
+<polyline points="1010.0,354.0 1010.0,464.0 754.0,464.0" fill="none" stroke="#c2410c" stroke-width="3" stroke-linejoin="round" marker-end="url(#g03b-arrow-c2410c)"/>
+<rect x="450.0" y="400.0" width="300.0" height="128.0" rx="8" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
+<text x="600.0" y="428.0" font-size="18" fill="#111827" text-anchor="middle" font-weight="bold">近い出力（波形が重なる）</text>
+<polyline points="474.0,470.0 477.1,467.2 480.3,464.4 483.4,461.8 486.6,459.5 489.8,457.5 492.9,455.8 496.1,454.6 499.2,453.7 502.4,453.2 505.5,453.1 508.6,453.3 511.8,453.9 515.0,454.6 518.1,455.5 521.2,456.5 524.4,457.5 527.5,458.4 530.7,459.3 533.9,460.1 537.0,460.7 540.1,461.2 543.3,461.5 546.5,461.8 549.6,461.9 552.8,462.1 555.9,462.3 559.0,462.6 562.2,463.0 565.4,463.6 568.5,464.5 571.6,465.6 574.8,467.0 578.0,468.7 581.1,470.6 584.2,472.8 587.4,475.1 590.5,477.5 593.7,479.9 596.9,482.3 600.0,484.5 603.1,486.5 606.3,488.2 609.5,489.5 612.6,490.4 615.8,490.9 618.9,490.9 622.0,490.4 625.2,489.6 628.4,488.3 631.5,486.7 634.6,484.8 637.8,482.8 641.0,480.6 644.1,478.4 647.2,476.2 650.4,474.2 653.5,472.3 656.7,470.7 659.9,469.2 663.0,468.0 666.1,467.1 669.3,466.4 672.5,465.8 675.6,465.4 678.8,465.0 681.9,464.7 685.0,464.4 688.2,463.9 691.4,463.4 694.5,462.7 697.6,461.8 700.8,460.8 704.0,459.7 707.1,458.4 710.2,457.1 713.4,455.8 716.5,454.5 719.7,453.4 722.9,452.5 726.0,451.8" fill="none" stroke="#374151" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="474.0,466.1 477.1,463.4 480.3,460.9 483.4,458.7 486.6,456.7 489.8,455.2 492.9,454.0 496.1,453.2 499.2,452.8 502.4,452.7 505.5,452.8 508.6,453.3 511.8,453.8 515.0,454.5 518.1,455.3 521.2,456.0 524.4,456.6 527.5,457.1 530.7,457.6 533.9,457.8 537.0,458.0 540.1,458.0 543.3,458.0 546.5,458.0 549.6,458.0 552.8,458.1 555.9,458.4 559.0,458.8 562.2,459.5 565.4,460.5 568.5,461.8 571.6,463.4 574.8,465.3 578.0,467.4 581.1,469.8 584.2,472.3 587.4,474.9 590.5,477.4 593.7,479.9 596.9,482.2 600.0,484.2 603.1,485.9 606.3,487.2 609.5,488.1 612.6,488.6 615.8,488.6 618.9,488.1 622.0,487.2 625.2,486.0 628.4,484.5 631.5,482.7 634.6,480.8 637.8,478.9 641.0,476.9 644.1,475.0 647.2,473.2 650.4,471.6 653.5,470.2 656.7,469.0 659.9,468.1 663.0,467.3 666.1,466.7 669.3,466.2 672.5,465.8 675.6,465.4 678.8,464.9 681.9,464.4 685.0,463.8 688.2,462.9 691.4,461.9 694.5,460.8 697.6,459.4 700.8,458.0 704.0,456.4 707.1,454.8 710.2,453.2 713.4,451.8 716.5,450.5 719.7,449.5 722.9,448.8 726.0,448.5" fill="none" stroke="#c2410c" stroke-width="3" stroke-linejoin="round" stroke-dasharray="7 5"/>
+<line x1="478.0" y1="507" x2="506.0" y2="507" stroke="#374151" stroke-width="3"/>
+<text x="512.0" y="512.0" font-size="16" fill="#374151" text-anchor="start">元のモデル</text>
+<line x1="620.0" y1="507" x2="648.0" y2="507" stroke="#c2410c" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="654.0" y="512.0" font-size="16" fill="#374151" text-anchor="start">ROM</text>
+<rect x="40.0" y="584.0" width="196.8" height="146.0" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<circle cx="138.4" cy="612" r="17" fill="#15803d"/>
+<text x="138.4" y="618.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">1</text>
+<text x="138.4" y="656.0" font-size="19" fill="#111827" text-anchor="middle" font-weight="bold">入出力を選ぶ</text>
+<text x="138.4" y="686.0" font-size="16" fill="#374151" text-anchor="middle">Select ROM I/Os</text>
+<polygon points="241.8,645.0 265.8,657.0 241.8,669.0" fill="#15803d"/>
+<rect x="270.8" y="584.0" width="196.8" height="146.0" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<circle cx="369.2" cy="612" r="17" fill="#15803d"/>
+<text x="369.2" y="618.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">2</text>
+<text x="369.2" y="656.0" font-size="19" fill="#111827" text-anchor="middle" font-weight="bold">実験を設定する</text>
+<text x="369.2" y="686.0" font-size="16" fill="#374151" text-anchor="middle">信号・範囲・境界</text>
+<polygon points="472.6,645.0 496.6,657.0 472.6,669.0" fill="#15803d"/>
+<rect x="501.6" y="584.0" width="196.8" height="146.0" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<circle cx="600.0" cy="612" r="17" fill="#15803d"/>
+<text x="600.0" y="618.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">3</text>
+<text x="600.0" y="656.0" font-size="19" fill="#111827" text-anchor="middle" font-weight="bold">シミュレーション</text>
+<text x="600.0" y="686.0" font-size="16" fill="#374151" text-anchor="middle">Run Simulations</text>
+<polygon points="703.4,645.0 727.4,657.0 703.4,669.0" fill="#15803d"/>
+<rect x="732.4" y="584.0" width="196.8" height="146.0" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<circle cx="830.8" cy="612" r="17" fill="#15803d"/>
+<text x="830.8" y="618.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">4</text>
+<text x="830.8" y="656.0" font-size="19" fill="#111827" text-anchor="middle" font-weight="bold">学習して比べる</text>
+<text x="830.8" y="686.0" font-size="16" fill="#374151" text-anchor="middle">LSTM・NSS等・</text>
+<text x="830.8" y="710.0" font-size="16" fill="#374151" text-anchor="middle">TestMSE</text>
+<polygon points="934.2,645.0 958.2,657.0 934.2,669.0" fill="#15803d"/>
+<rect x="963.2" y="584.0" width="196.8" height="146.0" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<circle cx="1061.6" cy="612" r="17" fill="#15803d"/>
+<text x="1061.6" y="618.0" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">5</text>
+<text x="1061.6" y="656.0" font-size="19" fill="#111827" text-anchor="middle" font-weight="bold">書き出す</text>
+<text x="1061.6" y="686.0" font-size="16" fill="#374151" text-anchor="middle">Simulinkのブロック・</text>
+<text x="1061.6" y="710.0" font-size="16" fill="#374151" text-anchor="middle">正規化</text>
+<rect x="40.0" y="760.0" width="1120.0" height="58.0" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="600.0" y="796.0" font-size="19" fill="#111827" text-anchor="middle" font-weight="bold">アドオン（R2025b以降）・Simulink・静的なROMと動的なROM</text>
+</svg>
