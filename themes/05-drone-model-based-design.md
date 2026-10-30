@@ -20,7 +20,7 @@
 
 検証は、モデルだけで閉ループを回す**MIL**（Model-in-the-Loop）、生成したコードをパソコンの上で動かす**SIL**（Software-in-the-Loop。PX4・ArduPilotでは、オートパイロットのソフトウェアをパソコンで動かす**SITL**の形をとる）、実際のフライトコントローラーのボードを、パソコンの上のプラントモデルとつないで動かす**HIL**（Hardware-in-the-Loop。PX4では**HITL**と書く）の順に実機へ近づけ、最後に飛行試験に進む。飛行試験で記録したログをモデルと比べ、モデルを直して次の設計に生かす。
 
-ドローン向けの小型のフライトコントローラーには、オープンソースのオートパイロット（**PX4**、**ArduPilot**）を載せたボード（**Pixhawk**等）が多く使われる。MathWorksは、これらのボードに向けて、Simulinkのモデルからコードを生成して書き込むサポートパッケージを用意している。地上の管制ソフト（QGroundControl・Mission Planner）との通信には**MAVLink**というプロトコルが使われる。
+ドローン向けの小型のフライトコントローラーには、オープンソースのオートパイロット（**PX4**、**ArduPilot**）を載せたボード（**Pixhawk**等）が多く使われている（著者の見立て）。MathWorksは、これらのボードに向けて、Simulinkのモデルからコードを生成して書き込むサポートパッケージを用意している。地上の管制ソフト（QGroundControl・Mission Planner）との通信には**MAVLink**というプロトコルが使われる。
 
 入門の内容は、次の7つの項目に分けられる。番号は、下の関連図の行と同じである。
 
@@ -40,7 +40,7 @@
 
 ### 開発の流れと主な製品
 
-次の図は、上の「はじめに」の流れを、このリンク集の項目の番号と合わせて示したものである（著者の整理）。
+次の図と表は、上の「はじめに」の流れと、各段階で使う主な製品を、このリンク集の項目の番号と合わせて示したものである（著者の整理）。表の「主な製品・機能」の列は、各段階の例題・製品のページに出てくるものから著者が選んだもので、公式の分類ではない。「補足」の列は、各例題・ページの記述である。
 
 ```mermaid
 flowchart LR
@@ -64,15 +64,15 @@ flowchart LR
 
 ### 事例の比較
 
-各社の事例のページに書かれている内容を、著者が表にまとめた。成果の数値は、いずれもMathWorksのページに書かれた各社の申告で、第三者による検証ではない。
+各社の事例のページに書かれている内容を、著者が表にまとめた。国名は、取得したページの内容で確かめられたもの（AVILUSのドイツ）だけを書いた。成果の数値は、いずれもMathWorksのページに書かれた各社の申告で、第三者による検証ではない。
 
 | 事例 | 機体 | MBDの範囲と主な製品 | ページに書かれた成果 |
 |---|---|---|---|
 | AVILUS（ドイツ） | 救助用の垂直離着陸型の機体（6つの同軸ローター） | System Composerでアーキテクチャ、Simscapeで電動の動力系、Simulinkで飛行制御のMIL、Embedded CoderでCコード、合成したセンサーデータでHIL、繋留飛行から自由飛行へ | 実機の試験で必要な追加の検証が5〜10%で済んだ。2機目の開発期間は1機目の約5分の1と予想 |
-| Korean Air（韓国） | UAVの飛行制御ソフトウェア | Aerospace Blocksetで機体、System Identification Toolboxでパラメーター推定、Robust Control Toolboxで制御則、Simulink Check・Simulink Coverageで規約とMC/DC、Embedded Coder、Polyspace Code Prover、Simulink Real-TimeでHIL | 開発の工数60%減、自動操縦の検証に要る飛行試験が約3分の1。機体は韓国政府の耐空証明を得た |
+| Korean Air | UAVの飛行制御ソフトウェア | Aerospace Blocksetで機体、System Identification Toolboxでパラメーター推定、Robust Control Toolboxで制御則、Simulink Check・Simulink Coverageで規約とMC/DC、Embedded Coder、Polyspace Code Prover、Simulink Real-TimeでHIL | 開発の工数60%減、自動操縦の検証に要る飛行試験が約3分の1。機体は韓国政府の耐空証明を得た |
 | Airnamics | 近距離撮影用のUAS「R5」（8つのモーター） | Aerospace Blocksetで機体・センサー、拡張カルマンフィルター、センサー・モーターの故障や突風を含むシミュレーション、Simulink Coderで搭載PC向けのコード、Simulink Real-Time | 初飛行の前に制御ソフトウェアの不具合の95%以上を発見。デバッグが数週間から数時間に |
-| BAE Systems Controls（米国） | 固定翼のUAV「Eagle 150」 | 既存の自動操縦のモデルを再利用、Simulink・Stateflowで6自由度の非線形モデルを含めてモデル化、Simulink Coderでコードと設計文書を生成、HILと飛行試験を繰り返す | 約8か月で飛行試験まで。設計・試験の費用を50%削減 |
-| NASA Langley（米国）〔ブログ〕 | マルチコプター（将来のVTOL機に向けた手順の確立） | Simulinkでプラントと制御、デスクトップのシミュレーション、ベンチ試験とHIL、Embedded CoderとPX4のサポートパッケージでCube Orange・Cube Blueへ | 2023年8月に自由飛行に成功。新しい制御器を数分で書き込んで試せるようになった |
+| BAE Systems Controls | 固定翼のUAV「Eagle 150」 | 既存の自動操縦のモデルを再利用、Simulink・Stateflowで6自由度の非線形モデルを含めてモデル化、Simulink Coderでコードと設計文書を生成、HILと飛行試験を繰り返す | 約8か月で飛行試験まで。設計・試験の費用を50%削減 |
+| NASA Langley〔ブログ〕 | マルチコプター（将来のVTOL機に向けた手順の確立） | Simulinkでプラントと制御、デスクトップのシミュレーション、ベンチ試験とHIL、Embedded CoderとPX4のサポートパッケージでCube Orange・Cube Blueへ | 2023年8月に自由飛行に成功。新しい制御器を数分で書き込んで試せるようになった |
 
 日本の企業・研究機関の事例は、MATLAB EXPO Japanの講演資料（SUBARU、JAXA、ヤマハ発動機の講演の録画）として公開されている（下の「講演資料（PDF）」「動画」）。
 
@@ -156,7 +156,7 @@ flowchart LR
 |---|---|---|---|
 | [自律飛行無人航空機のソフトウェア開発におけるMBD適用事例（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/images/events/matlabexpo/jp/2022/a-case-study-of-model-based-design-application-in-the-development-of-software-for-autonomous-flight-of-unmanned-aerial-vehicles.pdf) | サンプル | 日本語。MATLAB EXPO 2022 JapanのSUBARUの講演資料。自律飛行のソフトウェアへのMBDの適用（検索結果では、MILSで衝突回避のアルゴリズムを検証した内容） | — |
 | [ドローンの運航・交通管理シミュレーション（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/images/events/matlabexpo/jp/2020/drone-operation-and-traffic-management-simulation.pdf) | サンプル | 日本語。MATLAB EXPO 2020 JapanのJAXAの講演資料。ドローンの運航管理（UTM）のシミュレーターをMATLABで開発した内容 | — |
-| [ドローンによる空の産業革命と近未来（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/solutions/automotive/files/jp-expo-2015/industrial-revolution-of-the-skies-and-near-future-due-to-drones.pdf) | 概要 | 日本語。MATLAB EXPO 2015 Japanの基調講演の資料（千葉大学、当時）。国産ドローンの姿勢推定・飛行制御のアルゴリズムやエミュレーターの開発（古い資料） | — |
+| [ドローンによる空の産業革命と近未来（PDF）](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/solutions/automotive/files/jp-expo-2015/industrial-revolution-of-the-skies-and-near-future-due-to-drones.pdf) | 概要 | 日本語。MATLAB EXPO 2015 Japanの講演資料（講演者は千葉大学）。国産ドローンの姿勢推定・飛行制御のアルゴリズムやエミュレーターの開発（古い資料） | — |
 
 ### 動画
 
@@ -175,7 +175,7 @@ flowchart LR
 - このテーマは、MathWorksの製品を使ったドローンの開発基盤（UAV Toolboxとサポートパッケージ）と、MathWorksのサイトに載っている事例に絞った。ドローン本体のハードウェアの選び方や、PX4・ArduPilotそのものの使い方は扱っていない。
 - 事例の成果の数値は、いずれも事例のページに書かれた各社の申告である。BAE Systems Controls・Airnamics・Korean Airの事例は公開年がページから読み取れず、内容から古いものと考えられる（製品名が今と違うことがある）。AVILUSの事例も、ページに公開年の記載がなかった。
 - 講演資料（PDF）の本文は読んでおらず（取得はできたが、本文の文字を取り出せなかった）、説明は検索結果に出た資料の題名と抜粋から書いた。ヤマハ発動機の講演は動画のページの説明文から書き、技術の中身は確かめていない。
-- Parrotミニドローンは、用語の解説「ドローン プログラミングとは」で生産終了と書かれている。サポートパッケージのページは今も公開されているが、新しく実機をそろえる場合は、PX4のボードを使う流れのほうが情報が多い。
+- Parrotミニドローンは、用語の解説「ドローン プログラミングとは」で生産終了と書かれている。サポートパッケージのページは今も公開されているが、新しく実機をそろえる場合は、PX4のボードを使う流れのほうが、このリンク集で見つかった例題・事例が多い（著者の見立て）。
 - ArduPilotのサポートパッケージの導入リリースは、ページに書かれていなかった（検索結果ではR2025bのリリースノートに出ていたが、リリースノートのページは確かめていない）。
 - 検索で見つかったYouTubeの動画のうち、「From Data To Deployment: Advanced UAV Modeling, Control, and Autonomy…」はPX4のコミュニティのチャンネルの投稿、「Matlab, Simulink and UAV Toolbox」は第三者のチャンネルの投稿だったため、READMEの「情報源の範囲」に従い載せていない。
 - File Exchangeのサポートパッケージのページ（対応するPX4のファームウェアの版の記述がある）と、サードパーティーの製品のページ（屋内の飛行試験の設備等）は、今回は載せていない。
