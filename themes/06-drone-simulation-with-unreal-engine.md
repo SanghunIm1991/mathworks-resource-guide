@@ -14,7 +14,7 @@ MathWorksの製品では、**UAV Toolbox**のSimulation 3Dのブロックと、*
 
 このテーマでは、次の2つを詳しく扱う。
 
-- **環境構築**: 何をそろえれば動くか。既製のシーンで飛ばすだけなら、MathWorksの製品と性能の足りるパソコンでよい。シーンを作り変える場合は、MATLABのリリースに合った版のUnreal Engine（Unreal Editor）、Visual Studio、サポートパッケージ等が要る。
+- **環境構築**: 何をそろえれば動くか。既製のシーンで飛ばすだけなら、MathWorksの製品と性能の足りるパソコンでよいと読める（要件のページからの著者の読み方。「環境構築」の節を参照）。シーンを作り変える場合は、MATLABのリリースに合った版のUnreal Engine（Unreal Editor）、Visual Studio、サポートパッケージ等が要る。
 - **改良できること**: 天候・時刻、シーン（独自のシーン、RoadRunner、地図の3Dデータ）、機体の見た目と動く部品、センサーの種類と設定、セマンティックセグメンテーションのラベル、外部の機器への映像の送信など、何をどこで変えられるか。
 
 ドローンの開発全体（機体のモデル化、実機への実装、事例）は、[テーマ05](05-drone-model-based-design.md)にまとめている。このテーマは、その中の「シナリオと3Dシミュレーション」を掘り下げたものである。
@@ -79,7 +79,7 @@ flowchart LR
 
 #### シーンを作り変える場合に追加で要るもの
 
-MATLABのリリースと、Unreal Engine・Visual Studio（Windows）・Clang（Linux）の版は、決まった組み合わせで使う。
+MATLABのリリースと、Unreal Engine・Visual Studio（Windows）・Clang（Linux）の版は、決まった組み合わせで使う。次の表は、R2026bの英語版の要件のページによる（R2026aの日本語版の表は、最後の行が「R2026a」だけで、内容は同じ）。
 
 | MATLABのリリース | Unreal Engine | Visual Studio | Clang |
 |---|---|---|---|
@@ -103,7 +103,7 @@ MATLABのリリースと、Unreal Engine・Visual Studio（Windows）・Clang（
 
 前のリリースのサポートパッケージで作ったプロジェクトは、Unreal Engine 5.4でコピーを開いて変換し、フォルダー名の空白を除き、`sim3d.Editor`で開き直して、出力ログで移行しきれなかったアクターを確かめる（「以前のサポート パッケージを使用して開発したプロジェクトの移行」）。
 
-#### 制限（要件のページの記述）
+#### 制限
 
 - Simulation 3Dのブロックは、コード生成、モデル参照、ラピッドアクセラレータのモードに対応しない。
 - 1つのMATLABのセッションで、複数のUnreal Engineを同時に動かせない。
@@ -123,14 +123,14 @@ MATLABのリリースと、Unreal Engine・Visual Studio（Windows）・Clang（
 | 地図の3Dデータ | Cesium ionから、指定した緯度・経度の地形と建物（Cesium OSM Buildings、Google Photorealistic 3D Tiles等）を流し込み、その上で飛ばす | Scene ConfigurationのGeospatialのタブで地理の設定を有効にし、Cesium ionのアクセストークンを登録する。機体は地理座標（緯度・経度・高度）で入力できる | Visualize with Cesium、Simulation 3D UAV Vehicle |
 | 機体の見た目 | 種類（クアッドコプター・固定翼）と色（表示だけで、センサーの出力には影響しない） | Simulation 3D UAV VehicleのType・Color | Simulation 3D UAV Vehicle |
 | 独自の機体 | 自作の3Dモデル（.fbx）の機体。モーターとローターは8組まで、カメラの支点とアームも持てる | 部品に決まった名前を付けてBlender等で書き出し、Unreal Editorに取り込んで、TypeをCustomにして参照を貼る | Prepare Custom UAV Vehicle Mesh for Unreal Engine Scenario Simulation |
-| 動く部品 | ローターごとの回転数、モーターごとの傾き（ティルトローター機の表示等） | Simulation 3D Custom UAV Pack（R2026aで導入）で、独自の機体に入力を作る | Simulation 3D Custom UAV Pack |
+| 動く部品 | ローターごとの回転数、モーターごとの傾き（ティルトローター機の表示等。この例は著者の補足） | Simulation 3D Custom UAV Pack（R2026aで導入）で、独自の機体に入力を作る | Simulation 3D Custom UAV Pack |
 | センサー | 種類（ピンホール・魚眼のカメラ、LiDAR、超音波）、カメラの画像の大きさ・焦点距離・歪み、LiDARの検出距離・分解能・視野、取り付け位置、出力の座標系 | 各センサーのブロック。カメラを2台並べればステレオカメラになる（Visual SLAMの例題） | Unreal Engine シミュレーション用のセンサーの選択 |
-| 正解のデータ | 深度（0〜1000 m）、セマンティックセグメンテーションのラベル、機体の位置・姿勢 | Simulation 3D Cameraの出力を有効にする | Depth and Semantic Segmentation Visualization |
+| 正解のデータ | 深度（0〜1000 m）とセマンティックセグメンテーションのラベル。センサーの位置・向き（簡単な飛行の例題の魚眼カメラの正解の出力） | 深度とラベルはSimulation 3D Cameraの出力を有効にする。位置・向きは各センサーのブロックの正解の出力 | Depth and Semantic Segmentation Visualization |
 | ラベル | 独自のシーンに足した物体のラベル（建物・植生・道路等のID） | Unreal Editorで物体のCustomDepth Stencilの値にIDを入れる。IDを付けない物体は0（なし）になる | Apply Semantic Segmentation Labels to Custom Scenes |
 | 外部への出力 | カメラ画像・深度・ラベルを、ネットワーク越しにNVIDIA Jetsonへ送る（搭載コンピューターの代わりの試験） | Video Sendのブロック（GStreamerが要る）。受け側はJetsonの上のNetwork Video Receive | Stream Camera, Depth and Semantic Segmentation Data from Unreal Engine to NVIDIA Jetson |
 | 実機の制御器との接続 | PX4のHITL（実機のフライトコントローラー＋Simulinkのプラント）の飛行をUnreal Engineで描く。Unreal Engineの深度画像で、障害物の回避を試す | PX4のサポートパッケージの例題 | PX4 Autopilot Support from UAV Toolbox |
 
-機体の動き（プラントモデル）の忠実度を上げる方法は、Unreal Engineとは別の話題で、[テーマ05](05-drone-model-based-design.md)の【2】で扱っている。Unreal Engineは景色とセンサーを描く役で、機体の運動はSimulinkの側で計算する（PX4のHITLの例題のページも、Unreal Engineは描画の役で、制御の論理の実行には関わらないと説明している）。
+機体の動き（プラントモデル）の忠実度を上げる方法は、Unreal Engineとは別の話題で、[テーマ05](05-drone-model-based-design.md)の【2】で扱っている。Unreal Engineは景色とセンサーを描く役で、機体の運動はSimulinkの側で計算する。
 
 ## 読む順番の目安
 
@@ -154,7 +154,7 @@ MATLABのリリースと、Unreal Engine・Visual Studio（Windows）・Clang（
 | [無人航空機用の Unreal Engine シミュレーション](https://jp.mathworks.com/help/uav/ug/3d-simulation-for-unmanned-aerial-vehicles.html) | 概要 | できること（シーンの設定、機体の配置、センサーの取り付け、正解のデータ）、ブロックの一覧、カスタマイズに要るサポートパッケージ | UAV Toolbox、Simulink 3D Animation |
 | [UAV 用の Unreal Engine シミュレーションの仕組み](https://jp.mathworks.com/help/uav/ug/how-3d-simulation-for-uav-works.html) | チュートリアル | ロックステップの同期、1歩ごとのやり取り、ブロックの実行の順序、シミュレーションの速さを決めるもの | UAV Toolbox、Simulink 3D Animation |
 | [Coordinate Systems for Unreal Engine Simulation in UAV Toolbox](https://jp.mathworks.com/help/uav/ug/coordinate-systems-for-unreal-engine-simulation-in-uav-toolbox.html) | 辞書 | 英語。世界・機体・センサーの座標系と、Unreal Editorの左手系との違い、センサーの出力の座標系の選択肢 | UAV Toolbox |
-| [3D Scenes for Simulation in Unreal Engine Environment](https://jp.mathworks.com/help/uav/ug/3d-scenes-for-simulation-in-unreal-engine-environment.html) | 辞書 | 英語。製品ごとの既製のシーンの一覧と画像。UAV Toolboxで使えるのはUS city blockとSuburban scene | UAV Toolbox ほか |
+| [3D Scenes for Simulation in Unreal Engine Environment](https://jp.mathworks.com/help/uav/ug/3d-scenes-for-simulation-in-unreal-engine-environment.html) | 辞書 | 英語。製品ごとの既製のシーンの一覧と画像。UAV Toolboxの名前が付いているのはUS city blockとSuburban scene | UAV Toolbox ほか |
 
 ### ドキュメント（環境構築）
 
@@ -193,7 +193,7 @@ MATLABのリリースと、Unreal Engine・Visual Studio（Windows）・Clang（
 | [Depth and Semantic Segmentation Visualization Using Unreal Engine Simulation](https://jp.mathworks.com/help/uav/ug/depth-and-semantic-visual-with-ue4.html) | サンプル | 英語。カメラの深度とセマンティックセグメンテーションの出力を表示する。深度の範囲と、ラベルの配色 | UAV Toolbox、Computer Vision Toolbox、Simulink 3D Animation |
 | [3D シミュレーションでの UAV ナビゲーション向けステレオ Visual SLAM](https://jp.mathworks.com/help/vision/ug/stereo-visual-slam-for-uav-navigation-in-3d-simulation.html) | サンプル | カメラ2台でステレオカメラを作り、市街地を飛ぶUAVの自己位置をVisual SLAMで推定して、正解の軌道と比べる | Computer Vision Toolbox、UAV Toolbox、Navigation Toolbox、Simulink 3D Animation |
 | [Unreal Engine を使用した未踏環境における UAV の安全な着陸のシミュレーション](https://jp.mathworks.com/help/uav/ug/simulate-uav-safe-landing-in-unexplored-environment.html) | サンプル | Suburbanのシーンで、異常の後にLiDARで地図を作り、安全な着陸地点を見つけて降りる。モードの切り替えはStateflow | UAV Toolbox、Stateflow、Point Cloud Toolbox、Simulink 3D Animation |
-| [Visualize VTOL UAV Mission over Urban Environment](https://jp.mathworks.com/help/uav/ug/visualize-vtol-flight-mission-over-urban-environment.html) | サンプル | 英語。VTOL機の3Dモデルを取り込み、都市の上のミッションをUnreal Engineで描く | UAV Toolbox、Aerospace Blockset、Simulink 3D Animation、Interface for Unreal Engine Projects ほか |
+| [Visualize VTOL UAV Mission over Urban Environment](https://jp.mathworks.com/help/uav/ug/visualize-vtol-flight-mission-over-urban-environment.html) | サンプル | 英語。VTOL機の3Dモデルを取り込み、都市の上のミッションをUnreal Engineで描く | UAV Toolbox、Aerospace Blockset、Simulink 3D Animation、UAV Toolbox Interface for Unreal Engine Projects ほか |
 | [UAV の荷物配送](https://jp.mathworks.com/help/uav/ug/uav-package-delivery.html) | サンプル | 参照例。直方体の世界から写実的な3Dの環境へ切り替え、LiDARの点群とカメラの映像を使って市街地を飛ぶ | UAV Toolbox、Simulink 3D Animation ほか |
 | [Stream Camera, Depth and Semantic Segmentation Data from Unreal Engine to NVIDIA Jetson](https://jp.mathworks.com/help/uav/ug/stream-camera-depth-and-semantic-segmentation-data-from-unreal-engine-to-nvidia-jetson.html) | サンプル | 英語。カメラ画像・深度・ラベルを3つのVideo Sendのブロックで圧縮してJetsonに送り、Jetsonの側で受けて表示する | UAV Toolbox、Simulink 3D Animation、MATLAB Coder Support Package for NVIDIA Jetson |
 
