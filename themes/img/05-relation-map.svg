@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1210 1780" width="1210" height="1780" font-family="'Noto Sans JP','Hiragino Sans','Yu Gothic','Meiryo',sans-serif">
+<title>テーマ05 入門の内容とリンクの関連図</title>
+<rect x="0" y="0" width="1210" height="1780" fill="#ffffff"/>
+<rect x="192" y="96" width="246" height="1640" fill="#eff6ff"/>
+<rect x="192" y="52" width="246" height="36" rx="6" fill="#1d4ed8"/>
+<rect x="442" y="96" width="246" height="1640" fill="#f0fdf4"/>
+<rect x="442" y="52" width="246" height="36" rx="6" fill="#15803d"/>
+<rect x="692" y="96" width="246" height="1640" fill="#fffbeb"/>
+<rect x="692" y="52" width="246" height="36" rx="6" fill="#b45309"/>
+<rect x="942" y="96" width="246" height="1640" fill="#f5f3ff"/>
+<rect x="942" y="52" width="246" height="36" rx="6" fill="#6d28d9"/>
+<line x1="210" y1="34" x2="910" y2="34" stroke="#374151" stroke-width="2"/>
+<polygon points="920,34 908,28 908,40" fill="#374151"/>
+<line x1="20" y1="96" x2="1190" y2="96" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="97" width="166" height="446" fill="#f3f4f6"/>
+<line x1="20" y1="544" x2="1190" y2="544" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="545" width="166" height="162" fill="#f3f4f6"/>
+<line x1="20" y1="708" x2="1190" y2="708" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="709" width="166" height="62" fill="#f3f4f6"/>
+<line x1="20" y1="772" x2="1190" y2="772" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="773" width="166" height="96" fill="#f3f4f6"/>
+<line x1="20" y1="870" x2="1190" y2="870" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="871" width="166" height="146" fill="#f3f4f6"/>
+<line x1="20" y1="1018" x2="1190" y2="1018" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="1019" width="166" height="46" fill="#f3f4f6"/>
+<line x1="20" y1="1066" x2="1190" y2="1066" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="1067" width="166" height="670" fill="#f3f4f6"/>
+<line x1="20" y1="1736" x2="1190" y2="1736" stroke="#9ca3af" stroke-width="1"/>
+<rect x="200" y="106" width="230" height="26" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="140" width="230" height="26" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="174" width="230" height="26" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="208" width="230" height="42" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="258" width="230" height="42" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="308" width="230" height="26" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="342" width="230" height="58" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="408" width="230" height="42" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="200" y="458" width="230" height="74" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="950" y="106" width="230" height="26" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="450" y="554" width="230" height="42" rx="5" fill="#ffffff" stroke="#15803d" stroke-width="1.2"/>
+<rect x="700" y="554" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="604" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="654" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="450" y="718" width="230" height="42" rx="5" fill="#ffffff" stroke="#15803d" stroke-width="1.2"/>
+<rect x="450" y="782" width="230" height="42" rx="5" fill="#ffffff" stroke="#15803d" stroke-width="1.2"/>
+<rect x="700" y="782" width="230" height="26" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="816" width="230" height="42" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="200" y="880" width="230" height="42" rx="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="450" y="880" width="230" height="42" rx="5" fill="#ffffff" stroke="#15803d" stroke-width="1.2"/>
+<rect x="700" y="880" width="230" height="74" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="950" y="880" width="230" height="42" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="950" y="930" width="230" height="42" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="950" y="980" width="230" height="26" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="950" y="1028" width="230" height="26" rx="5" fill="#ffffff" stroke="#6d28d9" stroke-width="1.2"/>
+<rect x="700" y="1076" width="230" height="58" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="1142" width="230" height="74" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="1224" width="230" height="74" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="1306" width="230" height="58" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="1372" width="230" height="58" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="1438" width="230" height="90" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="1536" width="230" height="58" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="1602" width="230" height="58" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<rect x="700" y="1668" width="230" height="58" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+<text x="315" y="75" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">概要</text>
+<text x="565" y="75" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">チュートリアル</text>
+<text x="815" y="75" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">サンプル</text>
+<text x="1065" y="75" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">辞書</text>
+<text x="565" y="24" font-size="12" fill="#374151" text-anchor="middle" font-weight="normal">学ぶ順番</text>
+<text x="1065" y="38" font-size="12" fill="#374151" text-anchor="middle" font-weight="normal">必要なときに引く</text>
+<text x="105" y="75" font-size="14" fill="#111827" text-anchor="middle" font-weight="bold">入門の項目</text>
+<text x="32" y="120" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【1】ドローンのMBDの</text>
+<text x="32" y="138" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">全体像</text>
+<text x="32" y="568" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【2】機体のモデル化と</text>
+<text x="32" y="586" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">忠実度</text>
+<text x="32" y="732" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【3】飛行制御の設計</text>
+<text x="32" y="796" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【4】シナリオと</text>
+<text x="32" y="814" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">3Dシミュレーション</text>
+<text x="32" y="894" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【5】実機への実装と</text>
+<text x="32" y="912" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">検証</text>
+<text x="32" y="1042" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【6】飛行ログの解析</text>
+<text x="32" y="1090" font-size="13" fill="#111827" text-anchor="start" font-weight="bold">【7】開発の事例</text>
+<text x="207" y="123" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">ドローン プログラミングとは</text>
+<text x="207" y="157" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Drone Simulation</text>
+<text x="207" y="191" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔製品〕UAV Toolbox 製品情報</text>
+<text x="207" y="225" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔製品〕UAV - MATLAB &amp;</text>
+<text x="207" y="241" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulink</text>
+<text x="207" y="275" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔講演〕ドローンによる空の産業革命</text>
+<text x="207" y="291" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">と近未来</text>
+<text x="207" y="325" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕What Is UAV Toolbox?</text>
+<text x="207" y="359" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕UAV Toolbox: MATLAB</text>
+<text x="207" y="375" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">およびSimulinkによる</text>
+<text x="207" y="391" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">自律無人航空機開発</text>
+<text x="207" y="425" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕MATLABとSimulinkによる</text>
+<text x="207" y="441" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">自律型無人航空機の開発</text>
+<text x="207" y="475" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕UAV Applications with</text>
+<text x="207" y="491" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">MATLAB, PX4 and Unreal</text>
+<text x="207" y="507" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Engine®: From Simulation to</text>
+<text x="207" y="523" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Deployment</text>
+<text x="957" y="123" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">UAV Toolbox 入門</text>
+<text x="457" y="571" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">UAV Guidance Model ブロック</text>
+<text x="457" y="587" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">による高忠実度 UAV モデルの近似</text>
+<text x="707" y="571" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Evolve UAV Plant Model from</text>
+<text x="707" y="587" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Low to High Fidelity</text>
+<text x="707" y="621" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Parrot Minidrones をベースに</text>
+<text x="707" y="637" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">したクアッドコプターのモデル化</text>
+<text x="707" y="671" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">小型 UAV のシステム</text>
+<text x="707" y="687" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">アーキテクチャのモデル化</text>
+<text x="457" y="735" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕ドローンのシミュレーション</text>
+<text x="457" y="751" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">と制御</text>
+<text x="457" y="799" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">UAV 用の Unreal Engine</text>
+<text x="457" y="815" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">シミュレーションの仕組み</text>
+<text x="707" y="799" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">UAV の荷物配送</text>
+<text x="707" y="833" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔講演〕ドローンの運航・交通管理</text>
+<text x="707" y="849" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">シミュレーション</text>
+<text x="207" y="897" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔製品〕PX4 Autopilot Support</text>
+<text x="207" y="913" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">from UAV Toolbox</text>
+<text x="457" y="897" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔ブログ〕Programming a Parrot</text>
+<text x="457" y="913" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Minidrone using Simulink</text>
+<text x="707" y="897" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Run PX4 Autopilot in</text>
+<text x="707" y="913" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Hardware-in-the-Loop (HITL)</text>
+<text x="707" y="929" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Simulation with UAV Dynamics</text>
+<text x="707" y="945" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">in Simulink</text>
+<text x="957" y="897" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">UAV Toolbox Support Package</text>
+<text x="957" y="913" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">for PX4 Autopilots</text>
+<text x="957" y="947" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">UAV Toolbox Support Package</text>
+<text x="957" y="963" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">for ArduPilot Autopilots</text>
+<text x="957" y="997" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Parrot ミニドローン</text>
+<text x="957" y="1045" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">フライト ログ解析</text>
+<text x="707" y="1093" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔事例〕自律型救助ドローンの</text>
+<text x="707" y="1109" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">仮想設計とテストにより</text>
+<text x="707" y="1125" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">製品開発がスピードアップ</text>
+<text x="707" y="1159" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔事例〕Korean Air Speeds UAV</text>
+<text x="707" y="1175" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Flight Control Software</text>
+<text x="707" y="1191" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Development and Verification</text>
+<text x="707" y="1207" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">with Model-Based Design</text>
+<text x="707" y="1241" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔事例〕Airnamics Develops</text>
+<text x="707" y="1257" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Unmanned Aerial System for</text>
+<text x="707" y="1273" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Close-Range Filming with</text>
+<text x="707" y="1289" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Model-Based Design</text>
+<text x="707" y="1323" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔事例〕BAE Systems Controls</text>
+<text x="707" y="1339" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Develops Autopilot for</text>
+<text x="707" y="1355" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Unmanned Aerial Vehicle</text>
+<text x="707" y="1389" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔事例〕Minidrone Competition</text>
+<text x="707" y="1405" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">を活用したアビオニクスと</text>
+<text x="707" y="1421" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">制御の授業</text>
+<text x="707" y="1455" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔ブログ〕How NASA Langley is</text>
+<text x="707" y="1471" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Using MATLAB and Simulink to</text>
+<text x="707" y="1487" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Accelerate Development and</text>
+<text x="707" y="1503" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Testing of Multirotor Flight</text>
+<text x="707" y="1519" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Control</text>
+<text x="707" y="1553" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔講演〕自律飛行無人航空機の</text>
+<text x="707" y="1569" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">ソフトウェア開発における</text>
+<text x="707" y="1585" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">MBD適用事例</text>
+<text x="707" y="1619" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕【ヤマハ発動機の実例から</text>
+<text x="707" y="1635" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">学ぶ】最新MATLAB無人航空機(UAV)</text>
+<text x="707" y="1651" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">開発ソリューション</text>
+<text x="707" y="1685" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">〔動画〕Simulation-Driven</text>
+<text x="707" y="1701" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">Development of Autonomous</text>
+<text x="707" y="1717" font-size="12" fill="#111827" text-anchor="start" font-weight="normal">UAVs Using MATLAB</text>
+<text x="20" y="1766" font-size="11" fill="#4b5563" text-anchor="start" font-weight="normal">図の中の題名はリンクではない。開くときはテーマのファイルの「リンク」の表から開く。</text>
+</svg>

@@ -14,6 +14,7 @@ MathWorks社とは無関係の非公式のリンク集である。MATLAB・Simul
 | 02 | 設計情報からのテスト自動生成 | [themes/02-test-generation-from-design.md](themes/02-test-generation-from-design.md) | 2026-10-11 |
 | 03 | プラントモデルをニューラルネットワークに置き換えるサロゲート化 | [themes/03-surrogate-model-with-neural-network.md](themes/03-surrogate-model-with-neural-network.md) | 2026-10-11 |
 | 04 | 古典制御と現代制御でできること | [themes/04-classical-and-modern-control.md](themes/04-classical-and-modern-control.md) | 2026-10-11 |
+| 05 | モデルベース開発によるドローンの開発基盤と事例 | [themes/05-drone-model-based-design.md](themes/05-drone-model-based-design.md) | 2026-10-30 |
 
 ## 詳細解説
 
@@ -67,6 +68,7 @@ URLの書き方と確認の手順は、リンク集と同じ（下の「URLの�
 4. **リンク**: 種類ごとの表に分ける。種類は次のとおりで、該当がない種類は省く。
    - ドキュメント（量が多ければ「ドキュメント（ブロックの操作）」「ドキュメント（用語の解説）」のように用途ごとの小見出しに分けてよい。`/discovery/`の用語の解説のページは、ドキュメントの中に入れる）
    - 製品・ソリューションのページ
+   - ユーザー事例・技術記事（`/company/user_stories/`・`/company/mathworks-stories/`・`/company/technical-articles/`のページ）
    - ブログ
    - 講演資料（PDF）
    - 動画（`/videos/`のウェビナーの録画もここに入れる）
