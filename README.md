@@ -15,6 +15,7 @@ MathWorks社とは無関係の非公式のリンク集である。MATLAB・Simul
 | 03 | プラントモデルをニューラルネットワークに置き換えるサロゲート化 | [themes/03-surrogate-model-with-neural-network.md](themes/03-surrogate-model-with-neural-network.md) | 2026-10-11 |
 | 04 | 古典制御と現代制御でできること | [themes/04-classical-and-modern-control.md](themes/04-classical-and-modern-control.md) | 2026-10-11 |
 | 05 | モデルベース開発によるドローンの開発基盤と事例 | [themes/05-drone-model-based-design.md](themes/05-drone-model-based-design.md) | 2026-10-30 |
+| 06 | SimulinkとUnreal Engineによるドローンのシミュレーション | [themes/06-drone-simulation-with-unreal-engine.md](themes/06-drone-simulation-with-unreal-engine.md) | 2026-10-30 |
 
 ## 詳細解説
 
